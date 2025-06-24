@@ -104,7 +104,7 @@
 </style>
 
 <!-- ✅ Responsive Navbar -->
-<nav class="navblog">
+<!-- <nav class="navblog">
   <h1>Blogs</h1>
   <button class="hamburger" onclick="toggleMenu()">☰</button>
   <ul class="blognav" id="blognav">
@@ -114,14 +114,14 @@
     <li class="nav-item"><a class="nav-link" href="#">UTMs</a></li>
     <li class="nav-item"><a class="nav-link" href="#">IoT</a></li>
   </ul>
-</nav>
+</nav> -->
 
 <!-- ✅ Blog Cards Section -->
 <div class="container mb-5" style="margin-top: 2rem;">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col d-flex">
       <div class="card shadow-sm w-100">
-        <img src="/beram/static/img/DroneDelivery.jpeg"  >
+        <img src="{{ url_for('static', filename='img/DroneDelivery.jpeg') }}" alt="Drone Delivery">
         <div class="card-body">
           <h5 class="card-title">Revolutionizing Drone Delivery</h5>
           <p class="card-text">Learn how drone technology is reshaping the logistics industry by enabling faster, greener, and more efficient deliveries.</p>
@@ -131,7 +131,7 @@
 
     <div class="col d-flex">
       <div class="card shadow-sm w-100">
-        <img src="https://source.unsplash.com/500x300/?ai,innovation" class="card-img-top" alt="...">
+        <img src="{{ url_for('static', filename='img/solution_security.jpg') }}" alt="Survellience">
         <div class="card-body">
           <h5 class="card-title">AI & Drones: The Perfect Synergy</h5>
           <p class="card-text">Explore how artificial intelligence empowers drones for autonomous navigation, surveillance, and environmental monitoring.</p>
@@ -141,7 +141,7 @@
 
     <div class="col d-flex">
       <div class="card shadow-sm w-100">
-        <img src="https://source.unsplash.com/500x300/?engineering,sky" class="card-img-top" alt="...">
+        <img src="{{ url_for('static', filename='img/DCIS.png') }}" alt="dcis">
         <div class="card-body">
           <h5 class="card-title">The Future of Aerial Infrastructure</h5>
           <p class="card-text">Discover how BeRAM is pioneering drone-based infrastructure inspection to reduce human risk and increase precision.</p>
