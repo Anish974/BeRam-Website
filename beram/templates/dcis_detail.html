@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta name="description" content="Discover BeRAM's Drone Cloud Intelligence System, a 6th Generation AI-Powered solution for drone fleet management.">
+<title>BeRAM DCIS - 6th Generation Drone Technology</title>
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Solution Header with Image -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-8">
+                        <div class="text-center text-md-start mb-3 mb-md-0">
+                            <i class="fas fa-cloud fa-3x text-primary mb-2 d-inline-block"></i>
+                            <h1 class="display-5 d-inline-block align-middle ms-2">Drone Cloud Intelligence System</h1>
+                        </div>
+                        <p class="lead">
+                            BeRAM's 6th Generation AI-Powered DCIS delivers unmatched efficiency, autonomy, and versatility.
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="{{ url_for('static', filename='img/solution_dcis.jpg') }}" class="img-fluid rounded shadow-sm" alt="DCIS Solution" style="max-height: 250px;">
+                    </div>
+                </div>
+                <!-- End Solution Header -->
+
+                <hr class="my-4">
+                <!-- Overview Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">What is DCIS?</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <p class="lead">BeRAM's Drone Cloud Intelligence System (DCIS) integrates cloud computing, AI, and 5G connectivity to manage drone fleets in real-time, enhancing safety and efficiency across industries.</p>
+                            <p>Our DCIS represents the pinnacle of 6th generation AI-powered drone technology, enabling unprecedented capabilities in data processing, decision-making, and mission execution. By leveraging advanced cloud infrastructure and cutting-edge artificial intelligence, we've created a system that transforms how drones operate and deliver value.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="{{ url_for('static', filename='img/dcis_1.jpg') }}" alt="DCIS Technology" class="img-fluid rounded shadow-sm" style="max-height: 300px; width: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Key Features</h2>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-map-marked-alt fa-2x text-primary me-3"></i>
+                                        <h4 class="card-title mb-0">Real-Time Fleet Management</h4>
+                                    </div>
+                                    <p class="card-text">Utilize cloud-based infrastructure and 5G connectivity for seamless tracking, monitoring, and control of multiple drones, ensuring operational efficiency and safety.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-brain fa-2x text-primary me-3"></i>
+                                        <h4 class="card-title mb-0">AI-Driven Autonomy</h4>
+                                    </div>
+                                    <p class="card-text">Leverage advanced AI and machine learning for autonomous flight path planning, collision avoidance, and predictive maintenance, enhancing reliability and performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-cloud-upload-alt fa-2x text-primary me-3"></i>
+                                        <h4 class="card-title mb-0">Cloud-Based Data Processing</h4>
+                                    </div>
+                                    <p class="card-text">Process and analyze massive amounts of data in real-time through our scalable cloud infrastructure, enabling instant insights and decision-making capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                                        <h4 class="card-title mb-0">Enhanced Safety Protocols</h4>
+                                    </div>
+                                    <p class="card-text">Implement advanced safety features including geofencing, emergency response systems, and regulatory compliance tools to ensure secure operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Applications</h2>
+                    <div class="row mb-4">
+                        <div class="col-12 text-center">
+                            <img src="{{ url_for('static', filename='img/dcis_2.jpg') }}" alt="DCIS Applications" class="img-fluid rounded shadow-sm" style="max-height: 300px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-seedling fa-2x text-primary mt-1"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Precision Agriculture</h4>
+                                    <p>Monitor crop health, optimize irrigation, and apply targeted treatments with high-precision data collection and analysis, increasing yields while reducing resource usage.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-eye fa-2x text-primary mt-1"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Surveillance & Security</h4>
+                                    <p>Provide comprehensive monitoring of large areas, perimeter security, and rapid response capabilities for both public safety and private security applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-shipping-fast fa-2x text-primary mt-1"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Logistics & Delivery</h4>
+                                    <p>Enable efficient last-mile delivery, medical supply transport, and logistics operations in hard-to-reach areas with autonomous drone fleets.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-leaf fa-2x text-primary mt-1"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Environmental Monitoring</h4>
+                                    <p>Track environmental changes, monitor wildlife, and assess natural resources with high-resolution data collection and AI-powered analysis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Benefits</h2>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Increased Operational Efficiency:</strong> Optimize drone operations with AI-driven route planning and resource allocation
+                                </li>
+                                <li class="list-group-item border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Cost Reduction:</strong> Lower operational costs through automation and optimized resource utilization
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Enhanced Safety:</strong> Reduce risks with advanced collision avoidance and regulatory compliance features
+                                </li>
+                                <li class="list-group-item border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Data-Driven Insights:</strong> Generate actionable intelligence from comprehensive data collection and analysis
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Vision Section -->
+                <div class="mb-5 bg-light p-4 rounded">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h2 class="mb-3">Future Vision</h2>
+                            <p>BeRAM is pioneering the future of DCIS with deeper AI integration and expanded applications, aligning with our vision: <strong>Bharat the Land of Innovation</strong>. As we continue to advance our technology, we're focused on developing even more sophisticated autonomous capabilities, enhancing our cloud infrastructure, and expanding the range of industries we serve.</p>
+                            <p class="mb-0">Learn more about our mission and vision for the future of drone technology in India and beyond.</p>
+                            <div class="mt-3">
+                                <a href="{{ url_for('main.mission_statement') }}" class="btn btn-outline-primary">Our Mission</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mt-3 mt-md-0">
+                            <img src="{{ url_for('static', filename='img/dcis_3.jpg') }}" alt="Future of DCIS" class="img-fluid rounded shadow-sm" style="max-height: 200px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('solutions.list_solutions') }}" class="btn btn-outline-secondary me-2">« Back to Solutions</a>
+                    <a href="{{ url_for('main.contact') }}?subject=DCIS%20Inquiry" class="btn btn-primary">Contact Us to Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

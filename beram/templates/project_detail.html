@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+{# Optional: Add CSS/JS for a lightbox if you want image popups #}
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-4">{{ project.name }}</h1>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+
+                {# Image Carousel #}
+                {% if project.images and project.images|length > 0 %}
+                <div id="projectCarousel" class="carousel slide mb-4 shadow" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        {% for i in range(project.images|length) %}
+                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="{{ i }}" class="{{ 'active' if i == 0 else '' }}" aria-current="{{ 'true' if i == 0 else 'false' }}" aria-label="Slide {{ i + 1 }}"></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner rounded">
+                        {% for image_path in project.images %}
+                        <div class="carousel-item {{ 'active' if loop.first else '' }}">
+                            <img src="{{ url_for('static', filename=image_path) }}" class="d-block w-100" alt="Image {{ loop.index }} for {{ project.name }}" style="max-height: 500px; object-fit: contain; background-color: #f8f9fa;">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {% endif %}
+
+
+                <h3 class="mt-4">Project Overview</h3>
+                <p class="lead">{{ project.long_desc | safe }}</p>
+
+                {% if project.technologies %}
+                <h4 class="mt-4">Key Technologies</h4>
+                 <ul class="list-inline">
+                     {% for tech in project.technologies %}
+                         <li class="list-inline-item"><span class="badge bg-secondary">{{ tech }}</span></li>
+                     {% endfor %}
+                 </ul>
+                {% endif %}
+
+                {# Add more sections as needed: Challenges, Results, Client Testimonial etc. #}
+
+                 <div class="text-center mt-5">
+                     <a href="{{ url_for('projects.list_projects') }}" class="btn btn-outline-secondary me-2">« Back to Projects</a>
+                    <a href="{{ url_for('main.contact') }}?subject=Inquiry about {{ project.name }}" class="btn btn-primary">Inquire About This Project</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

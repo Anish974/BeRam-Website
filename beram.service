@@ -1,0 +1,17 @@
+[Unit]
+Description=BeRAM Website
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/beram
+Environment="PATH=/var/www/beram/venv/bin"
+EnvironmentFile=/var/www/beram/.env
+ExecStart=/var/www/beram/venv/bin/gunicorn --config gunicorn_config.py wsgi:app
+Restart=always
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

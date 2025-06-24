@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+        <p class="lead text-center mb-5">
+            Explore Our Portfolio of Innovative Projects, Pushing the Boundaries of Innovation and Aerial Technology.
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+             {% for project in projects %}
+            <div class="col">
+                {# Use the include partial for consistency #}
+                 {% include 'includes/project_card.html' with context %} {# Pass project via context #}
+            </div>
+            {% else %}
+            <div class="col-12">
+                <p class="text-center">No projects available at this time.</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{{ url_for('main.contact') }}?subject=Custom%20Solution%20Request" class="btn btn-primary btn-lg">Create Your Solution</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

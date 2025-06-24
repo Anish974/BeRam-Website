@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+        <p class="lead text-center mb-5">
+            Leveraging advanced drone technology to address challenges across various industries.
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for solution in solutions %}
+            <div class="col" data-aos="fade-up">
+                <div class="card h-100 shadow-sm {% if solution.has_dedicated_page %}border-primary border-2{% endif %}">
+                    {# --- ADD IMAGE HERE --- #}
+                    {% if solution.image %}
+                    <img src="{{ url_for('static', filename=solution.image) }}" class="card-img-top" alt="{{ solution.name }}" style="height: 200px; object-fit: cover;">
+                    {% else %}
+                    {# Optional: Placeholder if no image exists #}
+                     <img src="{{ url_for('static', filename='img/solution_dcis.jpg') }}" class="card-img-top" alt="Placeholder" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    {# --- END IMAGE --- #}
+
+                    <div class="card-body text-center d-flex flex-column"> {# Use flexbox for button alignment #}
+                        {# Optional: Keep icon or remove if image is enough #}
+                        <i class="{{ solution.icon }} fa-2x text-primary mb-2"></i>
+                        <h5 class="card-title">{{ solution.name }}
+                            {% if solution.slug == 'dcis' %}<span class="badge bg-primary ms-2">6th Gen</span>{% endif %}
+                            {% if solution.slug == 'utms' %}<span class="badge bg-success ms-2">Advanced</span>{% endif %}
+                            {% if solution.has_dedicated_page and solution.slug != 'dcis' and solution.slug != 'utms' %}<span class="badge bg-info ms-2">Featured</span>{% endif %}
+                        </h5>
+                        <p class="card-text flex-grow-1">{{ solution.desc }}</p> {# flex-grow pushes button down #}
+                        {% if solution.has_dedicated_page %}
+                            <a href="{{ url_for('solutions.solution_detail', slug=solution.slug) }}" class="btn btn-primary mt-auto align-self-center">View Details</a>
+                        {% else %}
+                            <a href="{{ url_for('solutions.solution_detail', slug=solution.slug) }}" class="btn btn-outline-primary mt-auto align-self-center">Learn More</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-12">
+                <p class="text-center">No solutions available at this time.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

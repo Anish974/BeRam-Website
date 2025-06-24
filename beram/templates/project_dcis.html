@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta name="description" content="Learn about BeRAM's Drone Cloud Intelligence System (DCIS), a 6th generation AI-powered drone platform for advanced operations.">
+<meta name="keywords" content="Drone Cloud Intelligence System, DCIS, BeRAM, AI-powered drones, cloud computing, autonomous flight">
+<title>{{ project.name }} | BeRAM</title>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section position-relative d-flex align-items-center justify-content-center text-center text-white" style="min-height: 60vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('{{ url_for('static', filename=project.images[0]) }}') no-repeat center center; background-size: cover;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">{{ project.name }}</h1>
+        <p class="lead mb-4 mx-auto" style="max-width: 800px;">6th Generation AI-Powered Drone Technology</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Overview Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Project Overview</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="lead">{{ project.long_desc | safe }}</p>
+                            <p>DCIS represents our flagship drone technology platform, combining advanced artificial intelligence with cloud computing to create a system that can operate autonomously in complex environments while providing real-time data processing and analysis.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="projectCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel">
+                                <div class="carousel-inner rounded">
+                                    {% for image_path in project.images %}
+                                    <div class="carousel-item {{ 'active' if loop.first else '' }}">
+                                        <img src="{{ url_for('static', filename=image_path) }}" class="d-block w-100" alt="DCIS drone system" style="height: 300px; object-fit: cover;">
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Key Features</h2>
+                    <div class="row">
+                        {% for feature in project.features %}
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    {% if loop.index == 1 %}
+                                    <i class="fas fa-network-wired text-primary fa-2x me-3"></i>
+                                    {% elif loop.index == 2 %}
+                                    <i class="fas fa-brain text-primary fa-2x me-3"></i>
+                                    {% elif loop.index == 3 %}
+                                    <i class="fas fa-cloud-upload-alt text-primary fa-2x me-3"></i>
+                                    {% elif loop.index == 4 %}
+                                    <i class="fas fa-shield-alt text-primary fa-2x me-3"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>{{ feature }}</h4>
+                                    {% if loop.index == 1 %}
+                                    <p>Coordinate and monitor multiple drones simultaneously through our cloud-based platform, ensuring optimal deployment and operation.</p>
+                                    {% elif loop.index == 2 %}
+                                    <p>Advanced AI algorithms enable drones to make intelligent decisions in real-time, adapting to changing conditions without human intervention.</p>
+                                    {% elif loop.index == 3 %}
+                                    <p>Process massive amounts of data in the cloud, providing instant insights and reducing the computational load on the drones themselves.</p>
+                                    {% elif loop.index == 4 %}
+                                    <p>Comprehensive safety features including collision avoidance, geofencing, and fail-safe protocols ensure reliable and secure operations.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Technical Specifications -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Technical Specifications</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-header bg-primary text-white">
+                                    <h4 class="mb-0">Hardware Specifications</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Flight Time</th>
+                                                <td>Up to 45 minutes</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Range</th>
+                                                <td>15 km (with 5G connectivity)</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Maximum Speed</th>
+                                                <td>72 km/h</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Payload Capacity</th>
+                                                <td>Up to 2.5 kg</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Sensors</th>
+                                                <td>4K camera, thermal imaging, LiDAR, multispectral</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-header bg-primary text-white">
+                                    <h4 class="mb-0">Software Capabilities</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">AI Processing</th>
+                                                <td>Edge + Cloud hybrid architecture</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Autonomous Navigation</th>
+                                                <td>Advanced path planning with obstacle avoidance</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Data Processing</th>
+                                                <td>Real-time analytics and insights</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Fleet Management</th>
+                                                <td>Up to 20 drones per operator</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Security</th>
+                                                <td>End-to-end encryption, secure boot</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Applications</h2>
+                    <div class="row">
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-search fa-2x"></i>
+                            </div>
+                            <h4>Surveillance</h4>
+                            <p>Perimeter security, event monitoring, and critical infrastructure protection</p>
+                        </div>
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-seedling fa-2x"></i>
+                            </div>
+                            <h4>Agriculture</h4>
+                            <p>Crop monitoring, precision spraying, and yield optimization</p>
+                        </div>
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-shipping-fast fa-2x"></i>
+                            </div>
+                            <h4>Logistics</h4>
+                            <p>Package delivery, medical supply transport, and inventory management</p>
+                        </div>
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-industry fa-2x"></i>
+                            </div>
+                            <h4>Industrial</h4>
+                            <p>Infrastructure inspection, construction monitoring, and site surveying</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Technologies</h2>
+                    <div class="row">
+                        {% for tech in project.technologies %}
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100 border-0 shadow-sm text-center">
+                                <div class="card-body">
+                                    {% if loop.index == 1 %}
+                                    <i class="fas fa-cloud fa-3x text-primary mb-3"></i>
+                                    {% elif loop.index == 2 %}
+                                    <i class="fas fa-microchip fa-3x text-primary mb-3"></i>
+                                    {% elif loop.index == 3 %}
+                                    <i class="fas fa-robot fa-3x text-primary mb-3"></i>
+                                    {% elif loop.index == 4 %}
+                                    <i class="fas fa-database fa-3x text-primary mb-3"></i>
+                                    {% endif %}
+                                    <h4>{{ tech }}</h4>
+                                    {% if loop.index == 1 %}
+                                    <p>Scalable cloud infrastructure for data processing and storage</p>
+                                    {% elif loop.index == 2 %}
+                                    <p>Advanced machine learning algorithms for intelligent decision-making</p>
+                                    {% elif loop.index == 3 %}
+                                    <p>Self-guided navigation and mission execution capabilities</p>
+                                    {% elif loop.index == 4 %}
+                                    <p>Instant data collection, processing, and actionable insights</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Integration with UTMS -->
+                <div class="mb-5 py-4 px-4 bg-primary text-white rounded">
+                    <h2 class="mb-4">Integration with UTMS</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <p class="lead">Our DCIS platform seamlessly integrates with our Unmanned Traffic Management System (UTMS) to ensure safe and compliant operations in shared airspace.</p>
+                            <p>This integration enables:</p>
+                            <ul>
+                                <li>Real-time airspace awareness and deconfliction</li>
+                                <li>Automated flight permissions and regulatory compliance</li>
+                                <li>Coordinated operations with other drone operators</li>
+                                <li>Enhanced safety through shared situational awareness</li>
+                            </ul>
+                            <a href="{{ url_for('projects.project_detail', slug='utms') }}" class="btn btn-light mt-3">Learn More About UTMS</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fas fa-traffic-light fa-6x mb-3"></i>
+                            <h4>UTMS</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('projects.list_projects') }}" class="btn btn-outline-secondary me-2">« Back to Projects</a>
+                    <a href="{{ url_for('main.contact') }}?subject=Inquiry about {{ project.name }}" class="btn btn-primary">Request a Demonstration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

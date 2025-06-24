@@ -1,0 +1,125 @@
+2025-06-19 16:44:02,094 ERROR: Exception on / [GET] [in /home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/beram/main/routes.py", line 36, in index
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/beram/Documents/BERAM-company/beram/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/beram/Documents/BERAM-company/beram/templates/base.html", line 54, in top-level template code
+    {% include 'includes/footer.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/beram/templates/includes/footer.html", line 44, in top-level template code
+    <li><a href="{{ url_for('main.internship') }}">Internships</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main.internship'. Did you mean 'main.index' instead?
+2025-06-19 16:44:02,097 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /home/beram/Documents/BERAM-company/beram/errors.py:15]
+2025-06-19 16:44:02,496 ERROR: Exception on /favicon.ico [GET] [in /home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/beram/errors.py", line 11, in not_found_error
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/beram/Documents/BERAM-company/beram/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/beram/Documents/BERAM-company/beram/templates/base.html", line 54, in top-level template code
+    {% include 'includes/footer.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/beram/templates/includes/footer.html", line 44, in top-level template code
+    <li><a href="{{ url_for('main.internship') }}">Internships</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main.internship'. Did you mean 'main.index' instead?
+2025-06-19 16:44:02,498 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /home/beram/Documents/BERAM-company/beram/errors.py:15]
+2025-06-19 16:50:24,741 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 16:50:47,635 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 16:51:23,297 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 16:57:05,073 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 16:58:18,033 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 16:59:48,764 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:00:29,462 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:01:15,676 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:02:08,460 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:03:44,106 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:04:50,816 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:05:55,310 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:06:54,623 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:07:27,435 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:09:44,179 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:10:11,814 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-19 17:13:04,290 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]

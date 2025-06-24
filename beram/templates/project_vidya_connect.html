@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta name="description" content="Learn about BeRAM's Vidya Connect, providing satellite internet connectivity across India for educational purposes with AI content filtering.">
+<meta name="keywords" content="Vidya Connect, BeRAM, satellite internet, educational technology, AI content filtering, remote education">
+<title>{{ project.name }} | BeRAM</title>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section position-relative d-flex align-items-center justify-content-center text-center text-white" style="min-height: 60vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('{{ url_for('static', filename=project.images[0]) }}') no-repeat center center; background-size: cover;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">{{ project.name }}</h1>
+        <p class="lead mb-4 mx-auto" style="max-width: 800px;">Bridging the digital divide in education across India</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Overview Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Project Overview</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="lead">{{ project.long_desc | safe }}</p>
+                            <p>Vidya Connect is designed to address the digital divide in education, particularly in rural and underserved areas of India where traditional internet infrastructure is limited or non-existent.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{ url_for('static', filename=project.images[0]) }}" alt="{{ project.name }}" class="img-fluid rounded shadow-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Challenge Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">The Challenge</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Limited Connectivity</h4>
+                                    <p>Over 70% of rural India lacks reliable internet access, creating a significant barrier to quality education.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Infrastructure Gaps</h4>
+                                    <p>Traditional internet infrastructure is costly and time-consuming to deploy in remote regions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Content Filtering</h4>
+                                    <p>Ensuring access to educational content while filtering out inappropriate material is a significant challenge.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Cost Barriers</h4>
+                                    <p>Existing solutions are often too expensive for schools and educational institutions with limited budgets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Our Solution Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Our Solution</h2>
+                    <div class="row">
+                        {% for feature in project.features %}
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        {% if loop.index == 1 %}
+                                        <i class="fas fa-satellite-dish fa-2x text-primary me-3"></i>
+                                        {% elif loop.index == 2 %}
+                                        <i class="fas fa-brain fa-2x text-primary me-3"></i>
+                                        {% elif loop.index == 3 %}
+                                        <i class="fas fa-rupee-sign fa-2x text-primary me-3"></i>
+                                        {% elif loop.index == 4 %}
+                                        <i class="fas fa-mountain fa-2x text-primary me-3"></i>
+                                        {% endif %}
+                                        <h4 class="card-title mb-0">{{ feature }}</h4>
+                                    </div>
+                                    {% if loop.index == 1 %}
+                                    <p class="card-text">Our satellite-based system provides internet access to any location in India, regardless of terrestrial infrastructure.</p>
+                                    {% elif loop.index == 2 %}
+                                    <p class="card-text">Our proprietary AI system intelligently filters content to ensure students access educational materials while blocking inappropriate content.</p>
+                                    {% elif loop.index == 3 %}
+                                    <p class="card-text">Innovative technology and government partnerships allow us to offer the service at a fraction of traditional costs.</p>
+                                    {% elif loop.index == 4 %}
+                                    <p class="card-text">Our system works in the most remote areas, from mountainous regions to isolated islands, bringing education everywhere.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- How It Works Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">How It Works</h2>
+                    <div class="row">
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="fw-bold">1</span>
+                            </div>
+                            <h5>Satellite Connection</h5>
+                            <p>Small satellite receivers are installed at schools or community centers</p>
+                        </div>
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="fw-bold">2</span>
+                            </div>
+                            <h5>AI Processing</h5>
+                            <p>All internet traffic passes through our AI content filtering system</p>
+                        </div>
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="fw-bold">3</span>
+                            </div>
+                            <h5>Local Distribution</h5>
+                            <p>Wi-Fi networks distribute the connection to students and teachers</p>
+                        </div>
+                        <div class="col-md-3 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="fw-bold">4</span>
+                            </div>
+                            <h5>Monitoring & Support</h5>
+                            <p>24/7 monitoring ensures reliable service and technical support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Impact</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <img src="{{ url_for('static', filename=project.images[0]) }}" alt="Students using Vidya Connect" class="img-fluid rounded shadow-sm">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 text-center mb-4">
+                                    <h3 class="display-4 text-primary">500+</h3>
+                                    <p>Schools Connected</p>
+                                </div>
+                                <div class="col-6 text-center mb-4">
+                                    <h3 class="display-4 text-primary">100K+</h3>
+                                    <p>Students Benefited</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <h3 class="display-4 text-primary">15</h3>
+                                    <p>States Covered</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <h3 class="display-4 text-primary">40%</h3>
+                                    <p>Improvement in Learning Outcomes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Technologies</h2>
+                    <div class="row">
+                        {% for tech in project.technologies %}
+                        <div class="col-md-4 mb-4">
+                            <div class="text-center">
+                                <div class="mb-3">
+                                    {% if loop.index == 1 %}
+                                    <i class="fas fa-satellite fa-3x text-primary"></i>
+                                    {% elif loop.index == 2 %}
+                                    <i class="fas fa-filter fa-3x text-primary"></i>
+                                    {% elif loop.index == 3 %}
+                                    <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                                    {% endif %}
+                                </div>
+                                <h4>{{ tech }}</h4>
+                                {% if loop.index == 1 %}
+                                <p>Low-latency satellite technology providing reliable connectivity even in remote areas</p>
+                                {% elif loop.index == 2 %}
+                                <p>Advanced machine learning algorithms that continuously improve content filtering accuracy</p>
+                                {% elif loop.index == 3 %}
+                                <p>Specialized educational platforms and resources optimized for low-bandwidth environments</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('projects.list_projects') }}" class="btn btn-outline-secondary me-2">« Back to Projects</a>
+                    <a href="{{ url_for('main.contact') }}?subject=Inquiry about {{ project.name }}" class="btn btn-primary">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

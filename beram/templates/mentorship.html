@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm p-4">
+                    <h2 class="text-center mb-4">BeRAM Mentorship Program</h2>
+                    <p class="lead">Our mentorship program connects aspiring drone technologists and innovators with experienced professionals in the field.</p>
+                    
+                    <h3 class="mt-5 mb-3">Program Benefits</h3>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">One-on-one guidance from industry experts</li>
+                        <li class="list-group-item">Personalized career development plans</li>
+                        <li class="list-group-item">Technical skill enhancement opportunities</li>
+                        <li class="list-group-item">Access to BeRAM's network of professionals</li>
+                        <li class="list-group-item">Exposure to cutting-edge drone technology and research</li>
+                    </ul>
+                    
+                    <h3 class="mt-4 mb-3">Mentorship Areas</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Technical Mentorship</h5>
+                                    <p class="card-text">Guidance on drone engineering, AI development, and technical skills.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Career Development</h5>
+                                    <p class="card-text">Support for career planning, job search, and professional growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Research Guidance</h5>
+                                    <p class="card-text">Mentorship for academic and industry research projects.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Entrepreneurship</h5>
+                                    <p class="card-text">Guidance for those looking to start their own drone-related ventures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="{{ url_for('main.contact') }}?subject=Mentorship%20Program%20Inquiry" class="btn btn-primary btn-lg">Apply for Mentorship</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
+

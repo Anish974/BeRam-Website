@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="display-1 text-danger">400</h1>
+                <h2 class="mb-4">Bad Request</h2>
+                <p class="lead mb-5">The server could not understand your request due to invalid syntax.</p>
+                <a href="{{ url_for('main.index') }}" class="btn btn-primary">Return to Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

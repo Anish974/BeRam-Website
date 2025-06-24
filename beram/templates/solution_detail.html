@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto"> {# Slightly wider column #}
+
+                {# --- Solution Header with Image --- #}
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-8">
+                        <div class="text-center text-md-start mb-3 mb-md-0">
+                            <i class="{{ solution.icon }} fa-3x text-primary mb-2 d-inline-block"></i>
+                            <h1 class="display-5 d-inline-block align-middle ms-2">{{ solution.name }}</h1>
+                        </div>
+                         <p class="lead">
+                             {{ solution.desc }}
+                         </p>
+                    </div>
+                     {% if solution.image %}
+                    <div class="col-md-4 text-center">
+                        <img src="{{ url_for('static', filename=solution.image) }}" class="img-fluid rounded shadow-sm" alt="{{ solution.name }}" style="max-height: 250px;">
+                    </div>
+                    {% endif %}
+                </div>
+                {# --- End Solution Header --- #}
+
+                <hr class="my-4">
+
+                 <h3 class="mt-4 mb-3">Detailed Description</h3>
+                <p>
+                    {# Use the longer description now #}
+                    {{ solution.long_desc | safe if solution.long_desc else 'Detailed information coming soon.' }}
+                </p>
+
+
+                <h3 class="mt-5 mb-3">Key Features & Benefits</h3>
+                <ul>
+                    {% if solution.features %}
+                        {% for feature in solution.features %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>Enhanced data acquisition</li>
+                        <li>Improved safety protocols</li>
+                        <li>Cost reduction through automation</li>
+                        <li>Real-time monitoring capabilities</li>
+                        <li>Increased operational efficiency</li>
+                    {% endif %}
+                </ul>
+
+                {# Optional: Add relevant images or case studies section here if needed #}
+                {#
+                <h3 class="mt-5 mb-3">Related Projects</h3>
+                 Loop through solution.related_projects if added
+                <a href="{{ url_for('projects.project_detail', slug='dcis') }}">DCIS Project</a>
+                #}
+
+                <div class="text-center mt-5">
+                     <a href="{{ url_for('solutions.list_solutions') }}" class="btn btn-outline-secondary me-2">« Back to Solutions</a>
+                    <a href="{{ url_for('main.contact') }}?subject=Inquiry about {{ solution.name }}" class="btn btn-primary">Inquire About This Solution</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

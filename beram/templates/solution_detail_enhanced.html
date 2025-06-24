@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta name="description" content="Learn about BeRAM's {{ solution.name }} solutions for drone technology and applications.">
+<meta name="keywords" content="{{ solution.name }}, drones, BeRAM, {{ solution.slug }}">
+<title>{{ solution.name }} | BeRAM</title>
+{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">{{ solution.name }}</h1>
+                <p class="lead mb-0">{{ solution.desc }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Overview Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">What is {{ solution.name }}?</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <p class="lead">{{ solution.long_desc|safe }}</p>
+                            <p>At BeRAM, we leverage cutting-edge drone technology to provide comprehensive {{ solution.name }} solutions that address real-world challenges and deliver measurable results for our clients.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="{{ url_for('static', filename=solution.image) }}" alt="{{ solution.name }}" class="img-fluid rounded shadow-sm" style="max-height: 300px; width: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Key Features</h2>
+                    <div class="row">
+                        {% for feature in solution.features %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="{{ solution.icon }} fa-2x text-primary mb-3"></i>
+                                    <h4 class="card-title h5">{{ feature }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Applications Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Applications</h2>
+                    <div class="row">
+                        {% if solution.slug == 'agriculture' %}
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-leaf fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Crop Monitoring</h4>
+                                        <p>Regular aerial surveys to assess crop health, identify pest infestations, and monitor growth patterns throughout the growing season.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-tint fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Precision Irrigation</h4>
+                                        <p>Identify areas requiring irrigation and optimize water usage by targeting specific zones based on moisture levels and plant needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-spray-can fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Targeted Spraying</h4>
+                                        <p>Apply fertilizers, pesticides, and herbicides precisely where needed, reducing chemical usage and environmental impact.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif solution.slug == 'energy' %}
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-bolt fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Power Line Inspection</h4>
+                                        <p>Regular monitoring of power lines to detect damage, vegetation encroachment, and potential failure points before they cause outages.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-wind fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Wind Turbine Inspection</h4>
+                                        <p>Detailed inspection of wind turbine blades and components to identify wear, damage, and maintenance needs without costly downtime.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-solar-panel fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Solar Farm Monitoring</h4>
+                                        <p>Thermal imaging to identify underperforming solar panels and optimize energy production across large solar installations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif solution.slug == 'construction' %}
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-ruler-combined fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Site Surveying</h4>
+                                        <p>Rapid and accurate topographic surveys and site mapping to support planning, design, and construction activities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-chart-line fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Progress Monitoring</h4>
+                                        <p>Regular aerial documentation of construction progress to track timelines, verify work completion, and identify potential issues.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-cubes fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Volumetric Measurements</h4>
+                                        <p>Accurate measurements of stockpiles, excavations, and material volumes to optimize resource management and billing.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif solution.slug == 'security' %}
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-shield-alt fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Perimeter Security</h4>
+                                        <p>Continuous monitoring of facility perimeters to detect unauthorized access and provide early warning of security breaches.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-users fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Event Security</h4>
+                                        <p>Aerial surveillance of large events to monitor crowd movements, identify potential safety issues, and support security personnel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-search fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Search Operations</h4>
+                                        <p>Rapid deployment for search and rescue operations, covering large areas quickly with thermal and optical imaging capabilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif solution.slug == 'logistics' %}
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-ambulance fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Medical Deliveries</h4>
+                                        <p>Rapid transport of medical supplies, blood samples, and emergency medications to remote or congested areas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-box fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Last-Mile Delivery</h4>
+                                        <p>Efficient package delivery to residential and commercial locations, reducing traffic congestion and delivery times.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-mountain fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Remote Area Access</h4>
+                                        <p>Delivery of essential supplies to areas with limited infrastructure or challenging terrain, such as islands, mountains, or disaster zones.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif solution.slug == 'mapping' %}
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-map fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Orthomosaic Mapping</h4>
+                                        <p>Creation of high-resolution, geometrically corrected aerial images for precise measurements and detailed analysis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-mountain fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Elevation Modeling</h4>
+                                        <p>Generation of detailed digital elevation models (DEMs) for terrain analysis, flood modeling, and land development planning.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-city fa-2x text-primary mt-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>Urban Planning</h4>
+                                        <p>Comprehensive 3D mapping of urban environments to support infrastructure development, zoning, and city planning initiatives.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-12">
+                                <p>Contact us to learn more about specific applications for {{ solution.name }}.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="mb-5 bg-light p-4 rounded">
+                    <h2 class="mb-4">Benefits</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Cost Efficiency:</strong> Reduce operational costs and resource usage through optimized drone operations
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Time Savings:</strong> Complete tasks faster than traditional methods, increasing productivity
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Enhanced Safety:</strong> Reduce human risk by accessing hazardous or difficult-to-reach areas
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Data Quality:</strong> Collect high-resolution, accurate data for better decision-making
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Our Approach</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="{{ url_for('static', filename=solution.image) }}" alt="{{ solution.name }} approach" class="img-fluid rounded shadow-sm">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Comprehensive Solutions</h4>
+                            <p>At BeRAM, we provide end-to-end {{ solution.name }} solutions tailored to your specific needs. Our approach combines cutting-edge drone technology with expert analysis to deliver actionable insights and measurable results.</p>
+                            <h4 class="mt-4">Client-Focused Process</h4>
+                            <ol class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <strong>1. Assessment:</strong> We begin by understanding your specific requirements and challenges.
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <strong>2. Planning:</strong> Our team develops a customized solution using the most appropriate drone technology and sensors.
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <strong>3. Execution:</strong> We deploy our drones to collect high-quality data efficiently and safely.
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <strong>4. Analysis:</strong> Our experts process and analyze the data to extract valuable insights.
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <strong>5. Delivery:</strong> We provide comprehensive reports and recommendations to support your decision-making.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('solutions.list_solutions') }}" class="btn btn-outline-secondary me-2">« Back to Solutions</a>
+                    <a href="{{ url_for('main.contact') }}?subject={{ solution.name }}%20Inquiry" class="btn btn-primary">Contact Us to Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

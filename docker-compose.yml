@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=production
+      - GUNICORN_WORKERS=4
+      - GUNICORN_BIND=0.0.0.0:8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  nginx:
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx_beram.conf:/etc/nginx/conf.d/default.conf
+      - ./static:/app/static
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - web

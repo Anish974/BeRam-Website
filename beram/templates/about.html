@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+
+        <div class="row mb-5 align-items-center" >
+            <div class="col-md-6" >
+                {# Add a relevant image about the company or team #}
+                <img src="{{ url_for('static', filename='img/about_team_placeholder.jpg') }}" class="img-fluid rounded" alt="BeRAM Team"style="height: 20rem;margin-left: 5rem;">
+            </div>
+
+            <div class="col-md-6" >
+                <!-- <h2>Our Story</h2> -->
+                <p class="lead" ><span style="color: rgb(30, 60, 231); font-size: 2rem;">Our Genesis: The Spark of Innovation </span><br>
+
+<span style="font-size: 1.5rem; color: black;">January 2024 </span><br>
+BeRAM (Bhandarkar Excellence of Research and Management Pvt. Ltd.) began as an idea born out of curiosity, innovation, and the urge to solve complex societal challenges through deep-tech solutions. What started in a college lab at RCOEM, Nagpur, has today evolved into a multidisciplinary startup shaping India's drone and AI ecosystems.</p>
+                <!-- <p>Inspired by India's rich history of innovation, we are committed to developing cutting-edge drone technology that pushes boundaries and creates tangible impact across industries. We believe in building solutions that are not only technologically advanced but also reliable, scalable, and accessible.</p> -->
+            </div>
+            
+        </div>
+
+        <!-- <hr class="my-5"> -->
+
+        <div class="row mb-5 align-items-center" style=" background-color: rgb(255, 255, 255);">
+            <div class="col-md-6">
+                <!-- <h2>Our Story</h2> -->
+                <p class="lead"style="color: black;"><span style="color: rgb(30, 60, 231); font-size: 2rem;">Ideation to Incorporation </span><br>
+
+<span style="font-size: 1.5rem; color: black;">March 25, 2025</span><br>
+BeRAM Pvt. Ltd. was officially incorporated as a private limited company with a vision to solve real-world problems through research, student-led innovation, and scalable products — starting with autonomous drone delivery and surveillance.</p>
+                <!-- <p>Inspired by India's rich history of innovation, we are committed to developing cutting-edge drone technology that pushes boundaries and creates tangible impact across industries. We believe in building solutions that are not only technologically advanced but also reliable, scalable, and accessible.</p> -->
+            </div>
+            <div class="col-md-6">
+                {# Add a relevant image about the company or team #}
+                <img src="{{ url_for('static', filename='img/about_team_placeholder.jpg') }}" class="img-fluid rounded" alt="BeRAM Team"  style="height: 20rem;margin-left: 5rem;">
+            </div>
+        </div>
+
+        <!-- <hr class="my-5"> -->
+
+
+        <div class="row mb-5 align-items-center">
+
+<div class="col-md-6">
+                {# Add a relevant image about the company or team #}
+                <img src="{{ url_for('static', filename='img/about_team_placeholder.jpg') }}" class="img-fluid rounded" alt="BeRAM Team" style="height: 20rem;margin-left: 5rem;">
+            </div>
+
+            <div class="col-md-6">
+                <!-- <h2>Our Story</h2> -->
+                <p class="lead"><span style="color: rgb(30, 60, 231); font-size: 2rem;">Major Innovations & IPs </span><br>
+
+<!-- <span style="font-size: 1.5rem; color: black;">January 2024 </span><br> -->
+We proudly filed a patent for our revolutionary Power Harnessing System (PHS), enabling drones to recharge mid-air using the magnetic field of HV transmission lines. This IP reflects our commitment to engineering systems never imagined before.</p>
+                <!-- <p>Inspired by India's rich history of innovation, we are committed to developing cutting-edge drone technology that pushes boundaries and creates tangible impact across industries. We believe in building solutions that are not only technologically advanced but also reliable, scalable, and accessible.</p> -->
+            </div>
+            
+        </div>
+
+        <!-- <hr class="my-5"> -->
+
+        <div class="row mb-5 align-items-center" style=" background-color: rgb(255, 255, 255);">
+            <div class="col-md-6">
+                <!-- <h2>Our Story</h2> -->
+                <p class="lead" style="color: black;"><span style="color: rgb(30, 60, 231); font-size: 2rem;">Project Streams Under Development</span><br>
+
+<!-- <span style="font-size: 1.5rem; color: black;">January 2024 </span><br> -->
+BeRAM’s innovation ecosystem revolves around three core technologies:
+
+    UTMS (Unmanned Traffic Management System)
+    Real-time AI-driven drone airspace traffic management and disaster monitoring.
+
+    PHS (Power Harnessing System)
+    Mid-air charging for uninterrupted drone operations over transmission infrastructure.
+
+    Drone Delivery MVP
+    A scalable drone delivery system optimized for last-mile logistics in Indian terrains.</p>
+                <!-- <p>Inspired by India's rich history of innovation, we are committed to developing cutting-edge drone technology that pushes boundaries and creates tangible impact across industries. We believe in building solutions that are not only technologically advanced but also reliable, scalable, and accessible.</p> -->
+            </div>
+            <div class="col-md-6">
+                {# Add a relevant image about the company or team #}
+                <img src="{{ url_for('static', filename='img/about_team_placeholder.jpg') }}" class="img-fluid rounded" alt="BeRAM Team"  style="height: 20rem;margin-left: 5rem;">
+            </div>
+        </div>
+
+        <hr class="my-5">
+ 
+         <div class="row mb-5">
+            <div class="col-12 text-center">
+                 <h2>Mission & Vision</h2>
+                 <!-- <p class="lead"><strong>Vision:</strong> "Bharat the Land of Innovation"</p> -->
+                 <p style="color: black; font-size: 1.3rem;"><strong>Mission:</strong> To design, develop, and deploy intelligent aerial solutions that enhance efficiency, safety, and productivity for our clients worldwide, while fostering a culture of continuous learning and ethical innovation.</p>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        {# You can reuse the innovation vision section if desired #}
+        {% include 'includes/innovation_vision.html' %}
+
+
+        <hr class="my-5">
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Join Our Journey</h2>
+                <p class="lead" style="color: black;" >We are always looking for passionate individuals and partners to collaborate with.</p>
+                <a href="#" class="btn btn-primary me-2">View Careers</a> {# Link to a future careers page #}
+                <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+

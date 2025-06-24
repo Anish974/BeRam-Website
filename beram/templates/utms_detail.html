@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta name="description" content="Learn about Unmanned Traffic Management Systems (UTMS), their applications, benefits, challenges, and future trends in drone airspace management.">
+<meta name="keywords" content="UTMS, unmanned traffic management, drones, airspace management, BVLOS">
+<title>Unmanned Traffic Management Systems (UTMS) | BeRAM</title>
+{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">Unmanned Traffic Management Systems (UTMS)</h1>
+                <p class="lead mb-0">The future of drone traffic control, ensuring safe and efficient operations in low-altitude airspace.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- What is UTMS Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">What is UTMS?</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <p class="lead">Unmanned Traffic Management Systems (UTMS) are the future of drone traffic control, ensuring drones operate safely and efficiently in low-altitude airspace (below 400 feet).</p>
+                            <p>Unlike traditional Air Traffic Management (ATM) systems for manned aircraft, UTMS is tailored for drones, supporting advanced operations like beyond visual line of sight (BVLOS) flights. By coordinating drone operators, service providers, and regulators, UTMS prevents collisions and congestion, paving the way for widespread drone use in delivery, agriculture, and more.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="{{ url_for('static', filename='img/drone_airspace.jpg') }}" alt="Drones flying in organized airspace" class="img-fluid rounded shadow-sm" style="max-height: 300px; width: 100%; object-fit: cover;">
+                            <p class="text-center text-muted mt-2"><small>Drones managed by UTMS in low-altitude airspace</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Applications of UTMS</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="{{ url_for('static', filename='img/delivery_icon.png') }}" alt="Delivery drone icon" width="32" height="32" class="mt-1">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Delivery Services</h4>
+                                    <p>UTMS makes drone deliveries possible by managing safe, beyond visual line of sight (BVLOS) flights. This allows companies to deliver packages quickly to urban and remote areas, transforming logistics with faster, eco-friendly solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="{{ url_for('static', filename='img/agriculture_icon.png') }}" alt="Agriculture drone icon" width="32" height="32" class="mt-1">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Agriculture</h4>
+                                    <p>UTMS manages drones for crop monitoring, spraying, and mapping, helping farmers optimize resources and increase yields. Multiple drones can work simultaneously across large fields, providing comprehensive data and targeted treatments.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="{{ url_for('static', filename='img/surveillance_icon.png') }}" alt="Surveillance drone icon" width="32" height="32" class="mt-1">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Surveillance</h4>
+                                    <p>UTMS supports drones for inspecting infrastructure (e.g., bridges, power lines) and monitoring for security or environmental purposes. Coordinated drone operations provide comprehensive coverage while maintaining safety standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="{{ url_for('static', filename='img/emergency_icon.png') }}" alt="Emergency response drone icon" width="32" height="32" class="mt-1">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4>Emergency Response</h4>
+                                    <p>UTMS coordinates drones in disaster scenarios for search and rescue, providing real-time data to first responders. Multiple drones can safely operate in the same airspace, accelerating response times and improving situational awareness.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Benefits of UTMS</h2>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="{{ url_for('static', filename='img/efficiency_icon.png') }}" alt="Efficiency icon" width="48" height="48" class="mb-3">
+                                    <h4 class="card-title">Operational Efficiency</h4>
+                                    <p class="card-text">Automates flight planning and allows one operator to manage multiple drones, saving time and costs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="{{ url_for('static', filename='img/safety_icon.png') }}" alt="Safety icon" width="48" height="48" class="mb-3">
+                                    <h4 class="card-title">Safety</h4>
+                                    <p class="card-text">Enhances airspace safety by providing real-time traffic data, reducing the risk of drone collisions with other aircraft or obstacles.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="{{ url_for('static', filename='img/airspace_icon.png') }}" alt="Airspace management icon" width="48" height="48" class="mb-3">
+                                    <h4 class="card-title">Airspace Management</h4>
+                                    <p class="card-text">Optimizes airspace use, supporting more drones and new aircraft like eVTOLs in increasingly congested low-altitude zones.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="{{ url_for('static', filename='img/economic_icon.png') }}" alt="Economic opportunities icon" width="48" height="48" class="mb-3">
+                                    <h4 class="card-title">Economic Opportunities</h4>
+                                    <p class="card-text">Enables new business models (e.g., drone delivery) and fosters industry growth by creating a framework for safe commercial operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Challenges of UTMS</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img src="{{ url_for('static', filename='img/cybersecurity_image.jpg') }}" alt="Secure drone communication network" class="img-fluid rounded shadow-sm">
+                        </div>
+                        <div class="col-md-8">
+                            <ol class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent border-0 ps-0 mb-3">
+                                    <h5>Security Vulnerabilities</h5>
+                                    <p>UTMS relies on data exchange, requiring strong cybersecurity to prevent hacking or unauthorized drone access. Protecting communication channels and verification systems is essential for maintaining system integrity.</p>
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0 mb-3">
+                                    <h5>Privacy Concerns</h5>
+                                    <p>Drones managed by UTMS can collect images and location data, raising privacy concerns among the public. To address this, clear regulations and transparent data policies are essential to balance effective airspace management with individual privacy rights.</p>
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0 mb-3">
+                                    <h5>ATM Integration</h5>
+                                    <p>Merging UTMS with traditional ATM systems is complex due to differing operational needs, technical standards, and regulatory frameworks. Seamless integration requires significant coordination between aviation authorities and technology providers.</p>
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 ps-0">
+                                    <h5>Global Regulation</h5>
+                                    <p>Varying international standards make it hard to create a unified UTMS for cross-border drone operations. Harmonizing regulations across countries is crucial for enabling global drone services and consistent safety standards.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Future of UTMS</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <p>The future of UTMS is bright, with cutting-edge technologies set to transform drone management. Artificial intelligence (AI) and machine learning will automate conflict detection and optimize airspace, while advanced sensors and radar improve drone tracking. High-speed 5G and satellite communication will enable reliable, complex operations like beyond visual line of sight (BVLOS) flights. Detect-and-avoid systems will allow drones to navigate safely.</p>
+                            <p>Ultimately, UTMS will integrate with traditional air traffic management, creating a unified system for all aircraft, from drones to electric air taxis. This evolution will support the growing urban air mobility ecosystem and enable new applications we're only beginning to imagine.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="{{ url_for('static', filename='img/future_drones.jpg') }}" alt="Futuristic drone airspace with AI integration" class="img-fluid rounded shadow-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Report Section -->
+                <div class="mb-5 text-center py-5 px-4 bg-primary text-white rounded">
+                    <h2 class="mb-4">Download the Full Report</h2>
+                    <p class="lead mb-4">Get detailed insights on Unmanned Traffic Management Systems in our comprehensive report.</p>
+                    <a href="{{ url_for('static', filename='assets/UTMS_Report.pdf') }}" class="btn btn-light btn-lg" aria-label="Download UTMS Report PDF">
+                        <i class="fas fa-file-pdf me-2"></i>Download Now
+                    </a>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('solutions.list_solutions') }}" class="btn btn-outline-secondary me-2">« Back to Solutions</a>
+                    <a href="{{ url_for('main.contact') }}?subject=UTMS%20Inquiry" class="btn btn-primary">Contact Us to Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

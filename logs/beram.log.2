@@ -1,0 +1,112 @@
+2025-06-23 18:35:56,720 ERROR: Exception on /blog [GET] [in /home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/beram/main/routes.py", line 149, in blog
+    return render_template('blog.html', title='Our blogs')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: blog.html
+2025-06-23 18:35:56,724 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /home/beram/Documents/BERAM-company/beram/errors.py:15]
+2025-06-23 18:35:57,492 ERROR: Exception on /blog [GET] [in /home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/beram/main/routes.py", line 149, in blog
+    return render_template('blog.html', title='Our blogs')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beram/Documents/BERAM-company/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: blog.html
+2025-06-23 18:35:57,496 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /home/beram/Documents/BERAM-company/beram/errors.py:15]
+2025-06-23 18:36:17,899 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 18:38:34,345 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 18:39:00,785 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 18:40:32,992 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 18:46:02,777 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:11:33,011 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:12:27,607 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:13:37,308 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:13:51,049 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:15:57,148 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:16:51,711 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:19:40,709 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:29:12,252 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:29:34,872 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:29:49,128 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:30:07,809 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:30:32,285 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:30:54,849 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:31:43,542 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:32:09,649 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:32:24,655 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:33:44,135 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:34:29,062 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:34:43,312 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:34:55,864 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:35:10,936 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:35:25,822 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:36:38,753 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:37:07,441 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:37:19,501 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:37:29,604 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:37:42,688 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:38:00,476 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]
+2025-06-23 19:38:28,929 INFO: BeRAM startup [in /home/beram/Documents/BERAM-company/beram/errors.py:44]

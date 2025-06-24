@@ -1,0 +1,55 @@
+<footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Column 1: Logo & Social -->
+            <div class="col-md-3 mb-4">
+                <img src="{{ url_for('static', filename='img/logo_white.png') }}" alt="BeRAM Logo" height="40" class="mb-3">
+                <p> <small>© {{ now.year }} BeRAM. All Rights Reserved.</small></p>
+                <div class="social-icons mt-3">
+                    <a href="https://www.linkedin.com/company/beram-bhandarkar-excellences-of-research-and-management/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:Contactberam@gmail.com" class="social-icon"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: About Us -->
+            <div class="col-md-2 col-sm-6 mb-4">
+                <h5>ABOUT US</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="{{ url_for('main.about') }}">Our Story</a></li>
+                    <li><a href="{{ url_for('news.list_news') }}">Newsroom</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Explore -->
+            <div class="col-md-2 col-sm-6 mb-4">
+                <h5>EXPLORE</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="{{ url_for('solutions.list_solutions') }}">Solutions</a></li>
+                    <li><a href="{{ url_for('projects.list_projects') }}">Projects</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Support -->
+            <div class="col-md-2 col-sm-6 mb-4">
+                <h5>SUPPORT</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="{{ url_for('main.contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5: Our Impact -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <h5>OUR IMPACT</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="{{ url_for('main.internship') }}">Internships</a></li>
+<li><a href="{{ url_for('main.mentorship') }}">Mentorship</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Add CSS for .footer-links a -->

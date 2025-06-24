@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm p-4">
+                    <h2 class="text-center mb-4">Join Our Internship Program</h2>
+                    <p class="lead">BeRAM offers exciting internship opportunities for students and recent graduates interested in drone technology, AI, and innovation.</p>
+                    
+                    <h3 class="mt-5 mb-3">What We Offer</h3>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Hands-on experience with cutting-edge drone technology</li>
+                        <li class="list-group-item">Mentorship from industry experts</li>
+                        <li class="list-group-item">Opportunity to work on real-world projects</li>
+                        <li class="list-group-item">Exposure to AI and machine learning applications in drone systems</li>
+                        <li class="list-group-item">Networking opportunities with professionals in the field</li>
+                    </ul>
+                    
+                    <h3 class="mt-4 mb-3">Who Should Apply</h3>
+                    <p>We welcome applications from students and recent graduates with backgrounds in:</p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Computer Science and Engineering</li>
+                        <li class="list-group-item">Electrical and Electronics Engineering</li>
+                        <li class="list-group-item">Mechanical Engineering</li>
+                        <li class="list-group-item">Aerospace Engineering</li>
+                        <li class="list-group-item">Data Science and AI</li>
+                    </ul>
+                    
+                    <div class="text-center mt-5">
+                        <a href="{{ url_for('main.contact') }}?subject=Internship%20Application" class="btn btn-primary btn-lg">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
+
+

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-4 mb-md-5">Mission Statement</h1>
+
+        <div class="row mb-4 mb-md-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm p-3 p-md-4">
+                    <h2 class="text-center mb-3 mb-md-4">Our Mission</h2>
+                    <p class="lead">To design, develop, and deploy intelligent aerial solutions that enhance efficiency, safety, and productivity for our clients worldwide, while fostering a culture of continuous learning and ethical innovation.</p>
+
+                    <hr class="my-4">
+
+                    <h3 class="text-center mb-3">Vision Statement</h3>
+                    <p class="lead text-center fw-bold">"Bharat the Land of Innovation"</p>
+                    <p>We envision a future where India leads the global technological landscape, particularly in the field of drone technology and autonomous systems. Our vision is to establish Bharat as a center of excellence for innovation, creating solutions that address real-world challenges and improve lives.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4 mb-md-5">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-3 mb-md-4">Steps Taken and Ongoing</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-content">
+                            <h4>Research & Development</h4>
+                            <p>Investing in cutting-edge research to develop proprietary technologies that push the boundaries of what's possible with drone systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-content">
+                            <h4>Talent Development</h4>
+                            <p>Building a team of exceptional engineers, designers, and innovators while fostering a culture of continuous learning and growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-content">
+                            <h4>Strategic Partnerships</h4>
+                            <p>Collaborating with industry leaders, academic institutions, and government bodies to create an ecosystem that supports innovation.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-content">
+                            <h4>Product Development</h4>
+                            <p>Creating our flagship products: DCIS (Drone Cloud Intelligence System) and UTMS (Unmanned Traffic Management System) to address critical needs in the market.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-content">
+                            <h4>Community Engagement</h4>
+                            <p>Engaging with the broader community through internships, mentorship programs, and educational initiatives to inspire the next generation of innovators.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="{{ url_for('main.contact') }}" class="btn btn-primary btn-lg">Join Our Journey</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline styling moved to main CSS file -->
+{% endblock %}

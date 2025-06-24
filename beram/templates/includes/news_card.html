@@ -1,0 +1,12 @@
+{# Expects 'article' variable in context #}
+<div class="card h-100 shadow-sm">
+    {% if article.image %}
+    <img src="{{ url_for('static', filename=article.image) }}" class="card-img-top" alt="{{ article.title }}">
+    {% endif %}
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ article.title }}</h5>
+        <p class="card-text text-muted small mb-2">{{ article.date }}</p>
+        <p class="card-text flex-grow-1">{{ article.summary }}</p>
+        <a href="{{ url_for('news.news_article', slug=article.slug) }}" class="btn btn-primary mt-auto align-self-start">Read More</a>
+    </div>
+</div>

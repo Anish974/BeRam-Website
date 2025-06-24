@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta name="description" content="Learn about BeRAM's Unmanned Traffic Management System (UTMS), an advanced solution for coordinating and managing drone traffic safely and efficiently.">
+<meta name="keywords" content="Unmanned Traffic Management System, UTMS, BeRAM, drone traffic, airspace management, regulatory compliance">
+<title>{{ project.name }} | BeRAM</title>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section position-relative d-flex align-items-center justify-content-center text-center text-white" style="min-height: 60vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('{{ url_for('static', filename=project.images[0]) }}') no-repeat center center; background-size: cover;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">{{ project.name }}</h1>
+        <p class="lead mb-4 mx-auto" style="max-width: 800px;">Advanced System for Managing Drone Traffic Safely and Efficiently</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Overview Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Project Overview</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="lead">{{ project.long_desc | safe }}</p>
+                            <p>As drone usage continues to grow exponentially, the need for a comprehensive traffic management system becomes critical. UTMS addresses this need by providing a scalable, secure, and intelligent platform for coordinating drone operations in increasingly crowded airspace.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="projectCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel">
+                                <div class="carousel-inner rounded">
+                                    {% for image_path in project.images %}
+                                    <div class="carousel-item {{ 'active' if loop.first else '' }}">
+                                        <img src="{{ url_for('static', filename=image_path) }}" class="d-block w-100" alt="UTMS system visualization" style="height: 300px; object-fit: cover;">
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Challenge Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">The Challenge</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Increasing Drone Traffic</h4>
+                                    <p>With millions of drones expected to be in operation within the next decade, airspace congestion is becoming a significant concern.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Safety Concerns</h4>
+                                    <p>Uncoordinated drone operations pose risks to other aircraft, infrastructure, and people on the ground.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Regulatory Complexity</h4>
+                                    <p>Navigating the evolving landscape of drone regulations across different jurisdictions is challenging for operators.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-2x me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4>Integration with Existing Systems</h4>
+                                    <p>Drones must operate alongside traditional aviation and urban infrastructure systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Key Features</h2>
+                    <div class="row">
+                        {% for feature in project.features %}
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        {% if loop.index == 1 %}
+                                        <i class="fas fa-radar fa-2x text-primary me-3"></i>
+                                        {% elif loop.index == 2 %}
+                                        <i class="fas fa-map-marked-alt fa-2x text-primary me-3"></i>
+                                        {% elif loop.index == 3 %}
+                                        <i class="fas fa-clipboard-check fa-2x text-primary me-3"></i>
+                                        {% elif loop.index == 4 %}
+                                        <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                                        {% endif %}
+                                        <h4 class="card-title mb-0">{{ feature }}</h4>
+                                    </div>
+                                    {% if loop.index == 1 %}
+                                    <p class="card-text">Track and visualize all registered drones in real-time, providing operators and authorities with complete situational awareness.</p>
+                                    {% elif loop.index == 2 %}
+                                    <p class="card-text">Define and enforce airspace restrictions, flight corridors, and no-fly zones to ensure orderly and safe drone operations.</p>
+                                    {% elif loop.index == 3 %}
+                                    <p class="card-text">Automate the process of obtaining necessary permissions and ensuring compliance with local and national regulations.</p>
+                                    {% elif loop.index == 4 %}
+                                    <p class="card-text">Predict and prevent potential conflicts between drones and other aircraft through advanced algorithms and communication protocols.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- System Architecture -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">System Architecture</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-broadcast-tower fa-2x"></i>
+                            </div>
+                            <h4>Communication Layer</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i> 5G/LTE connectivity</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Secure data transmission</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Low-latency protocols</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Redundant communication paths</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-server fa-2x"></i>
+                            </div>
+                            <h4>Processing Layer</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i> Cloud-based architecture</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Real-time data processing</li>
+                                <li><i class="fas fa-check text-success me-2"></i> AI-powered decision making</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Scalable computing resources</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4 text-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-desktop fa-2x"></i>
+                            </div>
+                            <h4>Interface Layer</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i> Web-based control center</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Mobile applications</li>
+                                <li><i class="fas fa-check text-success me-2"></i> API integrations</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Real-time visualization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Cases Section -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Use Cases</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Urban Air Mobility</h4>
+                                    <p class="card-text">Coordinate air taxis, delivery drones, and other aerial vehicles in densely populated urban environments to ensure safe and efficient operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Emergency Response</h4>
+                                    <p class="card-text">Prioritize and coordinate emergency drone operations during disasters, providing first responders with critical airspace access while maintaining safety.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Large-Scale Events</h4>
+                                    <p class="card-text">Manage multiple drone operations during sporting events, concerts, and public gatherings, ensuring security while enabling media coverage.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">Industrial Operations</h4>
+                                    <p class="card-text">Coordinate drone fleets for infrastructure inspection, agricultural operations, and other industrial applications across large areas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies Section -->
+                <div class="mb-5 py-4 px-4 bg-light rounded">
+                    <h2 class="mb-4">Technologies</h2>
+                    <div class="row">
+                        {% for tech in project.technologies %}
+                        <div class="col-md-3 mb-4">
+                            <div class="text-center">
+                                <div class="mb-3">
+                                    {% if loop.index == 1 %}
+                                    <i class="fas fa-plane fa-3x text-primary"></i>
+                                    {% elif loop.index == 2 %}
+                                    <i class="fas fa-map-marked-alt fa-3x text-primary"></i>
+                                    {% elif loop.index == 3 %}
+                                    <i class="fas fa-satellite fa-3x text-primary"></i>
+                                    {% elif loop.index == 4 %}
+                                    <i class="fas fa-random fa-3x text-primary"></i>
+                                    {% endif %}
+                                </div>
+                                <h4>{{ tech }}</h4>
+                                {% if loop.index == 1 %}
+                                <p>Advanced traffic management protocols adapted from traditional aviation</p>
+                                {% elif loop.index == 2 %}
+                                <p>Dynamic virtual boundaries to ensure drones operate only in approved areas</p>
+                                {% elif loop.index == 3 %}
+                                <p>Continuous monitoring of drone positions, altitudes, and trajectories</p>
+                                {% elif loop.index == 4 %}
+                                <p>Algorithms to detect and resolve potential conflicts before they occur</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Integration with DCIS -->
+                <div class="mb-5 py-4 px-4 bg-primary text-white rounded">
+                    <h2 class="mb-4">Integration with DCIS</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center">
+                            <i class="fas fa-cloud fa-6x mb-3"></i>
+                            <h4>DCIS</h4>
+                        </div>
+                        <div class="col-md-8">
+                            <p class="lead">Our UTMS platform seamlessly integrates with our Drone Cloud Intelligence System (DCIS) to provide a complete end-to-end solution for drone operations.</p>
+                            <p>This integration enables:</p>
+                            <ul>
+                                <li>Automatic flight plan submission and approval</li>
+                                <li>Real-time telemetry sharing for enhanced situational awareness</li>
+                                <li>Coordinated fleet operations in shared airspace</li>
+                                <li>Unified data analytics and reporting</li>
+                            </ul>
+                            <a href="{{ url_for('projects.project_detail', slug='dcis') }}" class="btn btn-light mt-3">Learn More About DCIS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('projects.list_projects') }}" class="btn btn-outline-secondary me-2">« Back to Projects</a>
+                    <a href="{{ url_for('main.contact') }}?subject=Inquiry about {{ project.name }}" class="btn btn-primary">Request a Demonstration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

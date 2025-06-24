@@ -1,0 +1,61 @@
+ <section id="innovation-vision" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4"><span style="color: rgb(99, 40, 6);">Our Vision:</span> <span style="color: rgb(255, 115, 0);">Bharat</span> <span style="color: lightgray;"> the</span><span style="color: blue;"> Land </span> <span style="color: lightgray;">of</span> <span style="color: green;">Innovation</span></h2>
+        <p class="lead text-center mb-5" style="color: black;">Inspired by the pioneers who shaped India's scientific legacy, we strive to build the future.</p>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+            {% for scientist in scientists %}
+            <div class="col text-center">
+                <div class="scientist-card" >
+                    <img src="{{ url_for('static', filename=scientist.img) }}" alt="{{ scientist.name }}" class="img-fluid rounded-circle mb-2">
+                        <div class="ring"></div> <!-- animated ring -->
+                    <h6>{{ scientist.name }}</h6>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Add CSS for .scientist-card if needed -->
+<style>
+  .scientist-card {
+    position: relative;
+    background-color: #f8f9fa; /* light bg by default */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.6s ease; /* Added transform transition */
+  }
+
+  .scientist-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    z-index: 1;
+  }
+
+  .scientist-card:hover {
+    transform: scale(1.1); /* Slower, subtler enlarge */
+  }
+
+  .scientist-card:hover::before {
+    animation: shine 0.5s ease-in-out;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+</style>

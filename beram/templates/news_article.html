@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <h1 class="display-5 mb-3">{{ article.title }}</h1>
+                <p class="text-muted mb-4">Published on: {{ article.date }}</p>
+
+                {% if article.image %}
+                <img src="{{ url_for('static', filename=article.image) }}" class="img-fluid rounded mb-4 w-100" style="max-height: 400px; object-fit: cover;" alt="{{ article.title }}">
+                {% endif %}
+
+                {# Use article.full_content if available, otherwise fallback to summary #}
+                <div class="article-content lead">
+                    <p>{{ article.full_content | safe if article.full_content else article.summary }}</p>
+                    {# Add more paragraphs or content here based on your data structure #}
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                 <hr class="my-5">
+
+                 <a href="{{ url_for('news.list_news') }}" class="btn btn-outline-secondary">« Back to News</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

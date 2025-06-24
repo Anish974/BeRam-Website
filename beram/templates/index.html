@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- 1. Hero Section (Inspired by Meta/BeRAM) -->
+    {% include 'includes/hero_section.html' with context %}
+
+    <!-- 2. Stats Banner -->
+    <section id="stats-banner" class="stats-banner py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                {% for stat in stats %}
+                <div class="col-md-3 col-sm-6 mb-4 stat-item" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                    <i class="{{ stat.icon }} fa-2x text-primary mb-3"></i>
+                    <div class="value display-5 fw-bold">{{ stat.value }}</div>
+                    <div class="label text-uppercase">{{ stat.label }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Innovation Vision (Bharat the Land of Innovation) -->
+    {% include 'includes/innovation_vision.html' with context %}
+
+    <!-- 4. Featured Projects (DCIS, UTMS - Inspired by BeRAM/Garuda) -->
+    <section id="featured-projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Projects</h2>
+            <div class="row">
+                {% for project in featured_projects %}
+                    <div class="col-md-6 mb-4">
+                        {% include 'includes/project_card.html' with context %}
+                    </div>
+                {% endfor %}
+            </div>
+             <div class="text-center mt-3">
+                <a href="{{ url_for('projects.list_projects') }}" class="btn btn-outline-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Solutions Overview (Optional - Inspired by Garuda Enterprise) -->
+    <section id="solutions-overview" class="py-5">
+         <div class="container">
+             <h2 class="text-center mb-4">Our Solutions</h2>
+            <div class="row text-center">
+                {% for slug, solution in all_solutions.items() %}
+                    {% if loop.index <= 4 %} {# Process only the first 4 items #}
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="{{ solution.icon }} fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">{{ solution.name }}</h5>
+                                <p class="card-text">{{ solution.desc }}</p>
+                                <a href="{{ url_for('solutions.solution_detail', slug=slug) }}" class="stretched-link">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+              <div class="text-center mt-3">
+                 <a href="{{ url_for('solutions.list_solutions') }}" class="btn btn-primary">Explore All Solutions</a>
+             </div>
+         </div>
+     </section>
+
+
+    <!-- 6. Latest News (Inspired by Garuda/Meta) -->
+    <section id="latest-news" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">In the Spotlight: News & Updates</h2>
+            <div class="row">
+                {% for article in latest_news %}
+                    <div class="col-md-4 mb-4">
+                         {% include 'includes/news_card.html' with context %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-3">
+                <a href="{{ url_for('news.list_news') }}" class="btn btn-outline-primary">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Call to Action (Inspired by Garuda 'Become a Drone Dealer') -->
+     <section id="cta" class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2>Join the Drone Revolution</h2>
+            <p class="lead">Partner with BeRAM and become a leader in drone technology distribution.</p>
+            <a href="{{ url_for('main.contact') }}?inquiry=dealer" class="btn btn-light btn-lg mt-3">Become a Dealer</a>
+            <a href="{{ url_for('main.contact') }}" class="btn btn-outline-light btn-lg mt-3 ms-3">Contact Us</a>
+        </div>
+    </section>
+
+{% endblock %}

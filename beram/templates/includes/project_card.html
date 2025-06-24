@@ -1,0 +1,17 @@
+{# Expects 'project' variable in context #}
+<div class="card h-100 shadow-sm {% if project.has_dedicated_page %}border-primary border-2{% endif %}">
+    {% if project.images %}
+        {# Use the first image for the card header #}
+        <img src="{{ url_for('static', filename=project.images[0]) }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px; object-fit: cover;">
+    {% endif %}
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ project.name }} {% if project.has_dedicated_page %}<span class="badge bg-primary ms-2">Featured</span>{% endif %}</h5>
+        <p class="card-text flex-grow-1">{{ project.short_desc }}</p>
+        {% if project.technologies %}
+        <p class="small text-muted">
+            Technologies: {{ project.technologies | join(', ') }}
+        </p>
+        {% endif %}
+        <a href="{{ url_for('projects.project_detail', slug=project.slug) }}" class="btn {% if project.has_dedicated_page %}btn-primary{% else %}btn-outline-primary{% endif %} mt-auto align-self-start">View Details</a>
+    </div>
+</div>
