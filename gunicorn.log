@@ -1,6 +1,11 @@
-[2025-06-24 21:45:06 +0530] [20684] [INFO] Starting gunicorn 23.0.0
-[2025-06-24 21:45:06 +0530] [20684] [INFO] Listening at: http://127.0.0.1:5000 (20684)
-[2025-06-24 21:45:06 +0530] [20684] [INFO] Using worker: sync
-[2025-06-24 21:45:06 +0530] [20691] [INFO] Booting worker with pid: 20691
-[2025-06-24 21:45:06,311] INFO in errors: BeRAM startup
+[2025-08-08 10:44:51 +0530] [10875] [INFO] Starting gunicorn 23.0.0
+[2025-08-08 10:44:51 +0530] [10875] [INFO] Listening at: http://127.0.0.1:5000 (10875)
+[2025-08-08 10:44:51 +0530] [10875] [INFO] Using worker: sync
+[2025-08-08 10:44:51 +0530] [10882] [INFO] Booting worker with pid: 10882
+[2025-08-08 10:44:53,283] INFO in errors: BeRAM startup
+BeRAM startup
+[2025-08-10 16:52:38 +0530] [10875] [CRITICAL] WORKER TIMEOUT (pid:10882)
+[2025-08-10 16:52:45 +0530] [10875] [ERROR] Worker (pid:10882) was sent SIGKILL! Perhaps out of memory?
+[2025-08-10 16:52:53 +0530] [53022] [INFO] Booting worker with pid: 53022
+[2025-08-10 16:53:22,375] INFO in errors: BeRAM startup
 BeRAM startup
