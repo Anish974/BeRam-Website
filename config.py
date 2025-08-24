@@ -9,7 +9,7 @@ class Config:
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587)
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None or True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'Contactberam@gmail.com'
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')  or 'lmkv nvst rpjg hdsu' #isme ye password important tha , isi wajah se mail send nhi ho raha tha 
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')  or 'cwfv lgnr dkwg bfax' #isme ye password important tha , isi wajah se mail send nhi ho raha tha 
     MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER') or 'Contactberam@gmail.com'
 
     # Security settings

@@ -1,4 +1,4 @@
-2025-08-24 13:09:43,790 ERROR: Exception on /mission-statement [GET] [in C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py:875]
+2025-08-24 18:55:15,900 ERROR: Exception on /solutions/dcis [GET] [in C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,8 +8,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "D:\BeRAM-Website\beram\main\routes.py", line 133, in mission_statement
-    return render_template('mission_statement.html', title='Our Mission')
+  File "D:\BeRAM-Website\beram\solutions\routes.py", line 32, in solution_detail
+    return render_template('dcis_detail.html',
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 149, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
@@ -24,12 +24,14 @@ Traceback (most recent call last):
     self.handle_exception(source=source_hint)
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "D:\BeRAM-Website\beram\templates\mission_statement.html", line 320, in template
-    <p class="small text-muted mt-3 mb-0">Last updated: {{ (now or '')|string[:10] or '2025-08-01' }}</p>
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '['
-2025-08-24 13:09:43,798 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]
-2025-08-24 13:12:27,718 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:12:34,424 ERROR: Exception on /mission-statement [GET] [in C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py:875]
+  File "D:\BeRAM-Website\beram\templates\dcis_detail.html", line 214, in template
+    <a href="{{ url_for('main.request_demo') }}" class="btn btn-outline-primary btn-lg">Request a Demo</a>
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-24 18:55:15,920 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]
+2025-08-24 18:55:36,051 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 18:55:36,559 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 18:55:49,063 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 18:55:59,930 ERROR: Exception on /solutions/dcis [GET] [in C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -39,8 +41,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "D:\BeRAM-Website\beram\main\routes.py", line 133, in mission_statement
-    return render_template('mission_statement.html', title='Our Mission')
+  File "D:\BeRAM-Website\beram\solutions\routes.py", line 32, in solution_detail
+    return render_template('dcis_detail.html',
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 149, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
@@ -55,22 +57,11 @@ Traceback (most recent call last):
     self.handle_exception(source=source_hint)
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "D:\BeRAM-Website\beram\templates\mission_statement.html", line 320, in template
-    <p class="small text-muted mt-3 mb-0">Last updated: {{ (now or '')|string[:10] or '2025-08-01' }}</p>
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '['
-2025-08-24 13:12:34,439 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]
-2025-08-24 13:14:50,744 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:14:55,060 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:14:55,897 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:15:25,754 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:15:30,642 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:18:31,013 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:20:14,807 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:21:34,002 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:21:53,771 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:22:03,484 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:24:06,481 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:24:08,873 ERROR: Exception on / [GET] [in C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py:875]
+  File "D:\BeRAM-Website\beram\templates\dcis_detail.html", line 214, in template
+    <a href="{{ url_for('main.request_demo') }}" class="btn btn-outline-primary btn-lg">Request a Demo</a>
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-24 18:55:59,933 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]
+2025-08-24 18:56:01,596 ERROR: Exception on /solutions/dcis [GET] [in C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -80,29 +71,30 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "D:\BeRAM-Website\beram\main\routes.py", line 23, in index
-    return render_template(
-  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
+  File "D:\BeRAM-Website\beram\solutions\routes.py", line 32, in solution_detail
+    return render_template('dcis_detail.html',
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
   File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "D:\BeRAM-Website\beram\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "D:\BeRAM-Website\beram\templates\base.html", line 30, in top-level template code
-    {% include 'includes/header.html' %}
-  File "D:\BeRAM-Website\beram\templates\includes\header.html", line 33, in top-level template code
-    <a class="nav-link" href="{{ url_for('main.blog') }}">Blog</a>
-  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main.blog'. Did you mean 'main.about' instead?
-2025-08-24 13:24:08,899 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]
-2025-08-24 13:24:58,150 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
-2025-08-24 13:39:05,371 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+  File "D:\BeRAM-Website\beram\templates\dcis_detail.html", line 214, in template
+    <a href="{{ url_for('main.request_demo') }}" class="btn btn-outline-primary btn-lg">Request a Demo</a>
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-24 18:56:01,599 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]
+2025-08-24 18:56:10,440 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 18:56:10,849 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 19:21:06,237 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 19:21:06,682 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 19:21:12,015 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 19:24:27,772 INFO: BeRAM startup [in D:\BeRAM-Website\beram\errors.py:44]
+2025-08-24 19:25:34,559 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in D:\BeRAM-Website\beram\errors.py:15]

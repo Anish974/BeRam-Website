@@ -61,18 +61,19 @@ NEWS_DATA = [
 ]
 
 SOLUTIONS_DATA = {
+   
     'dcis': {
-        'name': 'Drone Cloud Int. Sys.',
+        'name': 'Short-Range Drone Delivery',
         'icon': 'fas fa-cloud',
         'desc': '6th Generation AI-Powered Drone',
         'slug': 'dcis',
-        'image': 'img/solution_dcis.jpg',
+        'image': 'img/DroneDelivery.jpeg',
         'long_desc': 'Our Drone Cloud Intelligence System (DCIS) represents the pinnacle of 6th generation AI-powered drone technology. This advanced system integrates cloud computing with autonomous drone operations, enabling unprecedented capabilities in data processing, decision-making, and mission execution.<br><br><ul><li>Real-Time Fleet Management: Utilize cloud-based infrastructure and 5G connectivity for seamless tracking, monitoring, and control of multiple drones, ensuring operational efficiency and safety.</li><li>AI-Driven Autonomy: Leverage advanced AI and machine learning for autonomous flight path planning, collision avoidance, and predictive maintenance, enhancing reliability and performance.</li><li>Versatile Applications: Enable precision agriculture, surveillance, logistics, and environmental monitoring with high-resolution data acquisition and real-time analytics.</li></ul>',
         'features': ['Real-Time Fleet Management: Utilize cloud-based infrastructure and 5G connectivity for seamless tracking, monitoring, and control of multiple drones, ensuring operational efficiency and safety.', 'AI-Driven Autonomy: Leverage advanced AI and machine learning for autonomous flight path planning, collision avoidance, and predictive maintenance, enhancing reliability and performance.', 'Versatile Applications: Enable precision agriculture, surveillance, logistics, and environmental monitoring with high-resolution data acquisition and real-time analytics.'],
         'has_dedicated_page': True
     },
     'utms': {
-        'name': 'Unmanned Traffic Management System',
+        'name': 'Long-Range Drone Delivery',
         'icon': 'fas fa-traffic-light',
         'desc': 'Advanced system for managing drone traffic safely and efficiently',
         'slug': 'utms',
@@ -91,57 +92,57 @@ SOLUTIONS_DATA = {
         'features': ['Aerial mapping and soil analysis', 'Crop health monitoring', 'Targeted pesticide and fertilizer spraying'],
         'has_dedicated_page': True
     },
-    'energy': {
-        'name': 'Energy & Utilities',
-        'icon': 'fas fa-bolt',
-        'desc': 'Infrastructure inspection, pipeline monitoring',
-        'slug': 'energy',
-        'image': 'img/solution_energy.jpg',
-        'long_desc': 'Conduct safe and efficient inspections of power lines, wind turbines, solar farms, and pipelines. Detect anomalies early and reduce downtime.',
-        'features': ['Power line and infrastructure inspection', 'Wind turbine and solar farm monitoring', 'Early anomaly detection and preventive maintenance'],
-        'has_dedicated_page': True
-    },
-    'construction': {
-        'name': 'Construction & Infrastructure',
-        'icon': 'fas fa-hard-hat',
-        'desc': 'Site surveying, progress monitoring',
-        'slug': 'construction',
-        'image': 'img/solution_construction.jpg',
-        'long_desc': 'Perform rapid site surveys, create accurate 3D models, monitor construction progress, and ensure safety compliance with aerial data.',
-        'features': ['Rapid site surveys and 3D modeling', 'Construction progress monitoring', 'Safety compliance and risk assessment'],
-        'has_dedicated_page': True
-    },
-    # --- Add images and details for other solutions ---
-    'security': {
-        'name': 'Security & Surveillance',
-        'icon': 'fas fa-shield-alt',
-        'desc': 'Perimeter monitoring, event security',
-        'slug': 'security',
-        'image': 'img/solution_security.jpg',
-        'long_desc': 'Enhance security operations with aerial surveillance for large areas, perimeter monitoring, crowd management, and incident response.',
-        'features': ['Perimeter monitoring and intrusion detection', 'Event security and crowd management', 'Real-time incident response and situational awareness'],
-        'has_dedicated_page': True
-    },
-    'logistics': {
-         'name': 'Delivery & Logistics',
-         'icon': 'fas fa-shipping-fast',
-         'desc': 'Medical supply delivery, remote area transport',
-         'slug': 'logistics',
-         'image': 'img/solution_logistics.jpg',
-         'long_desc': 'Enable rapid delivery of essential goods, medical supplies, and packages to remote or hard-to-reach locations, bypassing traditional infrastructure limitations.',
-         'features': ['Medical supply and emergency delivery', 'Last-mile package delivery', 'Remote area access and transportation'],
-         'has_dedicated_page': True
-     },
-     'mapping': {
-         'name': 'Mapping & Surveying',
-         'icon': 'fas fa-map-marked-alt',
-         'desc': 'High-resolution maps, 3D modeling',
-         'slug': 'mapping',
-         'image': 'img/solution_mapping.jpg',
-         'long_desc': 'Generate detailed orthomosaic maps, digital elevation models (DEMs), and 3D point clouds for land management, urban planning, environmental studies, and more.',
-         'features': ['High-resolution orthomosaic mapping', 'Digital elevation models (DEMs) and 3D point clouds', 'Land management and urban planning support'],
-         'has_dedicated_page': True
-     }
+    # 'energy': {
+    #     'name': 'Energy & Utilities',
+    #     'icon': 'fas fa-bolt',
+    #     'desc': 'Infrastructure inspection, pipeline monitoring',
+    #     'slug': 'energy',
+    #     'image': 'img/solution_energy.jpg',
+    #     'long_desc': 'Conduct safe and efficient inspections of power lines, wind turbines, solar farms, and pipelines. Detect anomalies early and reduce downtime.',
+    #     'features': ['Power line and infrastructure inspection', 'Wind turbine and solar farm monitoring', 'Early anomaly detection and preventive maintenance'],
+    #     'has_dedicated_page': True
+    # },
+    # 'construction': {
+    #     'name': 'Construction & Infrastructure',
+    #     'icon': 'fas fa-hard-hat',
+    #     'desc': 'Site surveying, progress monitoring',
+    #     'slug': 'construction',
+    #     'image': 'img/solution_construction.jpg',
+    #     'long_desc': 'Perform rapid site surveys, create accurate 3D models, monitor construction progress, and ensure safety compliance with aerial data.',
+    #     'features': ['Rapid site surveys and 3D modeling', 'Construction progress monitoring', 'Safety compliance and risk assessment'],
+    #     'has_dedicated_page': True
+    # },
+    # # --- Add images and details for other solutions ---
+    # 'security': {
+    #     'name': 'Security & Surveillance',
+    #     'icon': 'fas fa-shield-alt',
+    #     'desc': 'Perimeter monitoring, event security',
+    #     'slug': 'security',
+    #     'image': 'img/solution_security.jpg',
+    #     'long_desc': 'Enhance security operations with aerial surveillance for large areas, perimeter monitoring, crowd management, and incident response.',
+    #     'features': ['Perimeter monitoring and intrusion detection', 'Event security and crowd management', 'Real-time incident response and situational awareness'],
+    #     'has_dedicated_page': True
+    # },
+    # 'logistics': {
+    #      'name': 'Delivery & Logistics',
+    #      'icon': 'fas fa-shipping-fast',
+    #      'desc': 'Medical supply delivery, remote area transport',
+    #      'slug': 'logistics',
+    #      'image': 'img/solution_logistics.jpg',
+    #      'long_desc': 'Enable rapid delivery of essential goods, medical supplies, and packages to remote or hard-to-reach locations, bypassing traditional infrastructure limitations.',
+    #      'features': ['Medical supply and emergency delivery', 'Last-mile package delivery', 'Remote area access and transportation'],
+    #      'has_dedicated_page': True
+    #  },
+    #  'mapping': {
+    #      'name': 'Mapping & Surveying',
+    #      'icon': 'fas fa-map-marked-alt',
+    #      'desc': 'High-resolution maps, 3D modeling',
+    #      'slug': 'mapping',
+    #      'image': 'img/solution_mapping.jpg',
+    #      'long_desc': 'Generate detailed orthomosaic maps, digital elevation models (DEMs), and 3D point clouds for land management, urban planning, environmental studies, and more.',
+    #      'features': ['High-resolution orthomosaic mapping', 'Digital elevation models (DEMs) and 3D point clouds', 'Land management and urban planning support'],
+    #      'has_dedicated_page': True
+    #  }
     # Add more solutions based on Garuda/Meta examples if needed
 }
 

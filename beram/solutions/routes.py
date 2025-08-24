@@ -15,6 +15,8 @@ def list_solutions():
                            title='Our Solutions',
                            solutions=sorted_solutions)
 
+
+
 @solutions_bp.route('/<slug>')
 def solution_detail(slug):
     """Displays the detail page for a specific solution."""

@@ -1,126 +1,159 @@
 {% extends "base.html" %}
+{% set preset = request.args.get('inquiry_type', '') %}
 
 {% block content %}
 <section class="py-5">
-    <div class="container">
-        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+  <div class="container">
+    <h1 class="display-5 text-center mb-5">{{ title }}</h1>
 
-        <div class="row">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2>Get In Touch</h2>
-                <p class="lead">We'd love to hear from you! Whether you have a question about our projects, solutions, partnerships, or anything else, our team is ready to answer all your questions.</p>
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2>Get In Touch</h2>
+        <p class="lead">
+          We'd love to hear from you! Whether you have questions about our projects,
+          solutions, partnerships, or anything else, our team is ready to help.
+        </p>
+        <hr class="my-4">
 
-                <hr class="my-4">
+        <p>
+          <strong><i class="fas fa-map-marker-alt me-2 text-primary"></i>Address:</strong><br>
+          BeRAM – Bhandarkar Excellence of Research & Management<br>
+          RCOEM-TATA-CIIIT Girls Hostel, Katol Rd, Gittikhadan, Nagpur 440013
+        </p>
+        <p>
+          <strong><i class="fas fa-envelope me-2 text-primary"></i>Email:</strong>
+          <a href="mailto:Contactberam@gmail.com">Contactberam@gmail.com</a>
+        </p>
+        <p>
+          <strong><i class="fab fa-linkedin me-2 text-primary"></i>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/company/beram-bhandarkar-excellences-of-research-and-management/"
+             target="_blank">BeRAM LinkedIn Page</a>
+        </p>
 
-                <p><strong><i class="fas fa-map-marker-alt me-2 text-primary"></i>Address:</strong><br>
-                   BeRAM - Bhandarkar Excellences of Research and Management<br>
-                   RCOEM-TATA-CIIIT, Girls Hostel<br>
-                   Katol Rd, near Ramdeobaba Temple<br>
-                   Gittikhadan, Nagpur 440013, Maharashtra, India
-                </p>
-                 <p><strong><i class="fas fa-envelope me-2 text-primary"></i>Email:</strong> <a href="mailto:Contactberam@gmail.com">Contactberam@gmail.com</a></p>
-                 <p><strong><i class="fab fa-linkedin me-2 text-primary"></i>LinkedIn:</strong> <a href="https://www.linkedin.com/company/beram-bhandarkar-excellences-of-research-and-management/" target="_blank">BeRAM LinkedIn Page</a></p>
+        <h4 class="mt-4">Dealer Inquiries</h4>
+        <p>
+          Interested in becoming a BeRAM dealer? Please mention
+          “Dealer Inquiry” in the subject line or contact us directly.
+        </p>
 
-                 <h4 class="mt-4">Dealer Inquiries</h4>
-                 <p>Interested in becoming a BeRAM dealer? Please mention "Dealer Inquiry" in the subject line or contact us directly.</p>
-
-                 {# Optional: Embedded Map #}
-                 <div class="map-responsive mt-4">
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.7968641113!2d79.04553867596574!3d21.153499780615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1a8d87e7a9f%3A0x85868b98b6c6293b!2sRCOEM-TATA-CIIIT%2C%20Katol%20Rd%2C%20near%20Ramdeobaba%20Temple%2C%20Gittikhadan%2C%20Nagpur%2C%20Maharashtra%20440013!5e0!3m2!1sen!2sin!4v1710934547971!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                 </div>
-                 <div class="mt-2">
-                     <a href="https://maps.app.goo.gl/7An1qTc6XERevduA6" target="_blank" class="text-primary"><i class="fas fa-directions me-1"></i> Get Directions</a>
-                 </div>
-
-            </div>
-
-            <div class="col-lg-6">
-                <h2>Send Us a Message</h2>
-                {# Basic Form Structure - Needs Flask-WTF for functionality #}
-                <form action="{{ url_for('main.contact') }}" method="POST" class="contact-form p-4 rounded shadow-sm bg-light">
-                    <div class="mb-3">
-                        <label for="name" class="form-label"><i class="fas fa-user text-primary me-2"></i>Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label"><i class="fas fa-envelope text-primary me-2"></i>Your Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inquiry_type" class="form-label"><i class="fas fa-question-circle text-primary me-2"></i>Inquiry Type</label>
-                        <select class="form-select" id="inquiry_type" name="inquiry_type" required>
-                            <option value="" selected disabled>Select an inquiry type</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="project">Project Information</option>
-                            <option value="dealer">Dealer Inquiry</option>
-                            <option value="partnership">Partnership Opportunity</option>
-                            <option value="career">Career/Internship</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="subject" class="form-label"><i class="fas fa-heading text-primary me-2"></i>Subject</label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter message subject" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label"><i class="fas fa-comment text-primary me-2"></i>Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-                    </div>
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
-                    </div>
-                </form>
-            </div>
+        <div class="map-responsive mt-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.7968641113!2d79.04553867596574!3d21.153499780615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1a8d87e7a9f%3A0x85868b98b6c6293b!2sRCOEM-TATA-CIIIT%2C%20Katol%20Rd%2C%20near%20Ramdeobaba%20Temple%2C%20Gittikhadan%2C%20Nagpur%2C%20Maharashtra%20440013!5e0!3m2!1sen!2sin!4v1710934547971!5m2!1sen!2sin"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        <div class="mt-2">
+          <a href="https://maps.app.goo.gl/7An1qTc6XERevduA6"
+             target="_blank" class="text-primary">
+            <i class="fas fa-directions me-1"></i> Get Directions
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2>Send Us a Message</h2>
+        <form action="{{ url_for('main.contact') }}" method="POST"
+              class="contact-form p-4 rounded shadow-sm bg-light">
+          <div class="mb-3">
+            <label for="name" class="form-label">
+              <i class="fas fa-user text-primary me-2"></i>Your Name
+            </label>
+            <input type="text" class="form-control" id="name" name="name"
+                   placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">
+              <i class="fas fa-envelope text-primary me-2"></i>Your Email
+            </label>
+            <input type="email" class="form-control" id="email" name="email"
+                   placeholder="Enter your email address" required>
+          </div>
+          <div class="mb-3">
+            <label for="inquiry_type" class="form-label">
+              <i class="fas fa-question-circle text-primary me-2"></i>Inquiry Type
+            </label>
+            <select class="form-select" id="inquiry_type" name="inquiry_type" required>
+              <option value="" disabled {% if not preset %}selected{% endif %}>
+                Select an inquiry type
+              </option>
+              <option value="general"       {% if preset=='general' %}selected{% endif %}>
+                General Inquiry
+              </option>
+              <option value="project"       {% if preset=='project' %}selected{% endif %}>
+                Project Information
+              </option>
+              <option value="dealer"        {% if preset=='dealer' %}selected{% endif %}>
+                Dealer Inquiry
+              </option>
+              <option value="partnership"   {% if preset=='partnership' %}selected{% endif %}>
+                Partnership Opportunity
+              </option>
+              <option value="career"        {% if preset=='career' %}selected{% endif %}>
+                Career/Internship
+              </option>
+              <option value="pre_order"     {% if preset=='pre_order' %}selected{% endif %}>
+                Pre-Order
+              </option>
+              <option value="request_demo"  {% if preset=='request_demo' %}selected{% endif %}>
+                Request Demo
+              </option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">
+              <i class="fas fa-heading text-primary me-2"></i>Subject
+            </label>
+            <input type="text" class="form-control" id="subject" name="subject"
+                   placeholder="Enter message subject" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">
+              <i class="fas fa-comment text-primary me-2"></i>Message
+            </label>
+            <textarea class="form-control" id="message" name="message"
+                      rows="5" placeholder="Type your message here..." required>
+            </textarea>
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="fas fa-paper-plane me-2"></i>Send Message
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>
 {% endblock %}
 
 {% block scripts %}
-<style>
-/* Map Responsive Styling */
-.map-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%; /* 16:9 aspect ratio */
-    position:relative;
-    height:0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-    border-radius: 8px;
-}
-
-/* Contact Form Styling */
-.contact-form {
-    border-top: 4px solid var(--bs-primary);
-    transition: all 0.3s ease;
-}
-
-.contact-form:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
-}
-
-.contact-form .form-control,
-.contact-form .form-select {
-    border: 1px solid #e0e0e0;
-    padding: 12px 15px;
-    transition: all 0.3s ease;
-}
-
-.contact-form .form-control:focus,
-.contact-form .form-select:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-}
-
-.contact-form label {
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-</style>
+  <style>
+    .map-responsive {
+      overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;
+      border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .map-responsive iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      border-radius: 8px;
+    }
+    .contact-form {
+      border-top: 4px solid var(--bs-primary);
+      transition: all 0.3s ease;
+    }
+    .contact-form:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+    }
+    .contact-form .form-control,
+    .contact-form .form-select {
+      border: 1px solid #e0e0e0;
+      padding: 12px 15px;
+      transition: all 0.3s ease;
+    }
+    .contact-form .form-control:focus,
+    .contact-form .form-select:focus {
+      border-color: var(--bs-primary);
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+    }
+    .contact-form label { font-weight: 500; margin-bottom: 8px; }
+  </style>
 {% endblock %}

@@ -147,3 +147,11 @@ def mentorship():
 @main_bp.route('/blog')
 def blog():
     return render_template('blog.html', title='Our blogs')
+
+@main_bp.route('/pre-order')
+def pre_order():
+    return render_template('pre_order.html', title='Pre-Order - BeRAM Drones')
+
+@main_bp.route('/request-demo')
+def request_demo():
+    return render_template('request_demo.html', title='Request Demo - BeRAM Drones')
