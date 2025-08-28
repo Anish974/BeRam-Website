@@ -77,7 +77,7 @@ SOLUTIONS_DATA = {
         'icon': 'fas fa-traffic-light',
         'desc': 'Advanced system for managing drone traffic safely and efficiently',
         'slug': 'utms',
-        'image': 'img/solution_utms.jpg',
+        'image': 'img/drone_airspace.jpg',
         'long_desc': 'Our Unmanned Traffic Management System (UTMS) provides a comprehensive solution for coordinating and managing drone traffic in urban and rural environments. This system ensures safe, efficient, and compliant operations for multiple drone operators in shared airspace.<br><br><ul><li>Real-time traffic monitoring and coordination</li><li>Seamless integration with urban infrastructure</li><li>AI-driven predictive analytics for traffic optimization</li></ul>',
         'features': ['Real-time traffic monitoring and coordination', 'Seamless integration with urban infrastructure', 'AI-driven predictive analytics for traffic optimization'],
         'has_dedicated_page': True
