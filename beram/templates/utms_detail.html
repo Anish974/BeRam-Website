@@ -53,7 +53,7 @@
       margin-bottom: 2rem;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
-    .btn-hero {
+    /* .btn-hero {
       background: white;
       color: var(--primary-color);
       padding: 0.8rem 2rem;
@@ -66,26 +66,164 @@
     .btn-hero:hover {
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 15px 35px rgba(13,110,253,0.4);
+    } */
+
+
+
+
+    .video-banner {
+      margin-top: 0.05rem;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .video-banner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+      z-index: -1;
+    }
+    
+    .video-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* background: linear-gradient(45deg, rgba(13,110,253,0.7), rgba(108,117,125,0.5)); */
+      z-index: 0;
+    }
+    
+
+.overlay-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      max-width: 1500px;
+      padding: 2rem;
+      margin-top: 15rem;
+    }
+    
+    .overlay-content h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      line-height: 1.2;
+    }
+    
+    .overlay-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
+    .btn-hero {
+      padding: 1rem 3rem;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(13,110,253,0.3);
+    }
+    
+    .btn-hero:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(13,110,253,0.4);
+    }
+
+
     /* Section headings */
+    /* Section Styling */
+    .section-modern {
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .section-modern:nth-child(even) {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
     .section-title {
-      text-align: center;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
       position: relative;
       color: #2c3e50;
     }
+    
     .section-title::after {
-      content: "";
-      display: block;
-      margin: 0.5rem auto 0;
-      width: 60px;
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
       height: 4px;
-      background: var(--primary-color);
+      background: var(--gradient-bg);
       border-radius: 2px;
     }
+
+
+
+    /* Feature Cards */
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-bg);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+      color: #764ba2;
+    }
+
+
+
+
+    
 
     /* Cards */
     .card {
@@ -230,7 +368,11 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero" data-aos="fade-up">
+<!-- <section class="hero" data-aos="fade-up">
+  <video autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='img/Long range Beram.mp4') }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
   <div>
     <h1 class="animate__animated animate__fadeInDown">
       Connecting Cities, Saving Lives<br>Long-Range Drone Delivery System
@@ -238,15 +380,30 @@
     <p class="animate__animated animate__fadeInUp animate__delay-1s">
       From godown-to-godown logistics to healthcare emergencies – BeRAM’s long-range drones redefine intercity deliveries.
     </p>
-    <a href="{{ url_for('main.contact') }}?inquiry_type=partnership" class="btn-hero animate__animated animate__pulse animate__delay-2s">
-      Partner With Us
-    </a>
+    <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-primary btn-hero animate__animated animate__pulse animate__delay-2s floating">Pre-Order Now 🚀</a>
+  </div>
+</section> -->
+
+
+<section class="video-banner">
+  <video autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='img/Long range Beram.mp4') }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay-content" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="animate__animated animate__fadeInDown">Connecting Cities, Saving Lives<br>Long-Range Drone Delivery System</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">From godown-to-godown logistics to healthcare emergencies – BeRAM’s long-range drones redefine intercity deliveries.</p>
+    <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-primary btn-hero animate__animated animate__pulse animate__delay-2s floating">Pre-Order Now 🚀</a>
   </div>
 </section>
 
+
+
 <!-- Problem & Solution -->
-<section class="section-modern" data-aos="fade-up">
+<!-- <section class="section-modern" data-aos="fade-up">
   <div class="container">
+    <h2 class="section-title">The Challenge We're Solving</h2>
+
     <div class="row justify-content-center">
       <div class="col-md-6">
         <h2 class="section-title text-danger">Problem Statement</h2>
@@ -266,7 +423,56 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+
+<!-- Problem Statement -->
+  <section class="section-modern" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">The Challenge We're Solving</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="text-danger mb-3">Current Problems:</h4>
+                <ul class="list-unstyled">
+                  <!-- <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Local Godown earn less compare to E-commerce gaints on per delivery basis</li> -->
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Inter-city deliveries take 2-5 days due to road congestion and multiple transfers.</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Healthcare logistics often fail due to delays, contributing to 12,000 deaths daily.</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>High costs and CO₂ emissions from diesel trucks decrease efficiency.</li>
+                
+                  <!-- <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>No Scheduled Delivery</li> -->
+                  
+
+                </ul>
+              </div>
+             <div class="col-md-6">
+  <h4 class="text-success mb-3">Our Solutions:</h4>
+  <ul class="list-unstyled">
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+     Direct godown-to-godown and urgent healthcare deliveries with AI-powered long-range drones.
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Patented Power Harvesting System (PHS) enables in-flight charging for extended endurance.
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Significantly faster, cost-effective, and 98% less carbon emissions compared to trucks.
+    </li>
+    
+  </ul>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
 <!-- Features -->
 <section class="section-modern bg-light" data-aos="fade-up">
