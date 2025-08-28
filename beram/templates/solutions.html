@@ -27,6 +27,8 @@
                         <h5 class="card-title">{{ solution.name }}
                             {% if solution.slug == 'dcis' %}<span class="badge bg-primary ms-2">6th Gen</span>{% endif %}
                             {% if solution.slug == 'utms' %}<span class="badge bg-success ms-2">Advanced</span>{% endif %}
+                            {% if solution.slug == 'srdd' %}<span class="badge bg-success ms-2">Advanced</span>{% endif %}
+                            {% if solution.slug == 'lrdd' %}<span class="badge bg-success ms-2">Advanced</span>{% endif %}
                             {% if solution.has_dedicated_page and solution.slug != 'dcis' and solution.slug != 'utms' %}<span class="badge bg-info ms-2">Featured</span>{% endif %}
                         </h5>
                         <p class="card-text flex-grow-1">{{ solution.desc }}</p> {# flex-grow pushes button down #}
@@ -42,7 +44,7 @@
             <div class="col-12">
                 <p class="text-center">No solutions available at this time.</p>
             </div>
-            {% endfor %}
+            {% endfor %}8 p1
         </div>
     </div>
 </section>
