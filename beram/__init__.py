@@ -65,7 +65,7 @@ SOLUTIONS_DATA = {
     'dcis': {
         'name': 'Short-Range Drone Delivery',
         'icon': 'fas fa-cloud',
-        'desc': '6th Generation AI-Powered Drone',
+        'desc': 'From Godown to Doorstep',
         'slug': 'dcis',
         'image': 'img/DroneDelivery.jpeg',
         'long_desc': 'Our Drone Cloud Intelligence System (DCIS) represents the pinnacle of 6th generation AI-powered drone technology. This advanced system integrates cloud computing with autonomous drone operations, enabling unprecedented capabilities in data processing, decision-making, and mission execution.<br><br><ul><li>Real-Time Fleet Management: Utilize cloud-based infrastructure and 5G connectivity for seamless tracking, monitoring, and control of multiple drones, ensuring operational efficiency and safety.</li><li>AI-Driven Autonomy: Leverage advanced AI and machine learning for autonomous flight path planning, collision avoidance, and predictive maintenance, enhancing reliability and performance.</li><li>Versatile Applications: Enable precision agriculture, surveillance, logistics, and environmental monitoring with high-resolution data acquisition and real-time analytics.</li></ul>',
@@ -75,7 +75,7 @@ SOLUTIONS_DATA = {
     'utms': {
         'name': 'Long-Range Drone Delivery',
         'icon': 'fas fa-traffic-light',
-        'desc': 'Advanced system for managing drone traffic safely and efficiently',
+        'desc': 'From Godown To Godown',
         'slug': 'utms',
         'image': 'img/drone_airspace.jpg',
         'long_desc': 'Our Unmanned Traffic Management System (UTMS) provides a comprehensive solution for coordinating and managing drone traffic in urban and rural environments. This system ensures safe, efficient, and compliant operations for multiple drone operators in shared airspace.<br><br><ul><li>Real-time traffic monitoring and coordination</li><li>Seamless integration with urban infrastructure</li><li>AI-driven predictive analytics for traffic optimization</li></ul>',
