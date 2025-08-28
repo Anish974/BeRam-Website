@@ -20,6 +20,10 @@ def project_detail(slug):
             return render_template('project_dcis.html', title=project['name'], project=project)
         elif slug == 'utms':
             return render_template('project_utms.html', title=project['name'], project=project)
+        elif slug == 'srdd':
+            return render_template('project_utms.html', title=project['name'], project=project)
+        elif slug == 'lrdd':
+            return render_template('project_utms.html', title=project['name'], project=project)
 
         elif slug == 'vidya-connect':
             return render_template('project_vidya_connect.html', title=project['name'], project=project)

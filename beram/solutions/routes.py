@@ -8,8 +8,8 @@ def list_solutions():
     """Displays the overview page listing all solutions."""
     # Sort solutions to ensure DCIS appears first
     sorted_solutions = sorted(SOLUTIONS_DATA.values(),
-                             key=lambda x: 0 if x.get('slug') == 'dcis' else
-                                         (1 if x.get('slug') == 'utms' else 2))
+                             key=lambda x: 0 if x.get('slug') == 'srdd' else
+                                         (1 if x.get('slug') == 'lrdd' else 2))
 
     return render_template('solutions.html',
                            title='Our Solutions',
@@ -36,11 +36,23 @@ def solution_detail(slug):
             return render_template('utms_detail.html',
                                   title=f"UTMS: {solution['name']}",
                                   solution=solution)
+        
+        elif slug == 'srdd':
+            return render_template('short_rangeDD.html',
+                                  title=f"DCIS: {solution['name']}",
+                                  solution=solution)
+        elif slug == 'lrdd':
+            return render_template('long_rangeDD.html',
+                                  title=f"UTMS: {solution['name']}",
+                                  solution=solution)
+           
+        
         else:
             # For other solutions, use a generic detail template
             return render_template('solution_detail_enhanced.html',
                                   title=f"{solution['name']}",
                                   solution=solution)
+        
 
     # Default solution detail page
     return render_template('solution_detail.html',

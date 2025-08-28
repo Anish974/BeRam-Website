@@ -1,0 +1,642 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+  <meta name="description" content="BeRAM's Long-Range Drone Delivery System enables intercity logistics and healthcare deliveries with AI navigation, long endurance, and 98% lower carbon emissions." />
+  <meta name="keywords" content="Long-range drone, intercity delivery drone, AI-powered drone, healthcare logistics drone" />
+  <title>Long-Range Drone Delivery – BeRAM Drones</title>
+
+  <!-- Animation & styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Reuse your short-range page base styles */
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --success-color: #198754;
+      --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --hover-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .hero {
+      height: 80vh;
+      background: var(--gradient-bg);
+      color: white;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 0;
+    }
+    .hero > div {
+      position: relative;
+      max-width: 700px;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    /* .btn-hero {
+      background: white;
+      color: var(--primary-color);
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-transform: uppercase;
+      box-shadow: 0 8px 25px rgba(13,110,253,0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-hero:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(13,110,253,0.4);
+    } */
+
+
+
+
+    .video-banner {
+      margin-top: 0.05rem;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .video-banner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+      z-index: -1;
+    }
+    
+    .video-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* background: linear-gradient(45deg, rgba(13,110,253,0.7), rgba(108,117,125,0.5)); */
+      z-index: 0;
+    }
+    
+
+.overlay-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      max-width: 1500px;
+      padding: 2rem;
+      margin-top: 15rem;
+    }
+    
+    .overlay-content h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      line-height: 1.2;
+    }
+    
+    .overlay-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .btn-hero {
+      padding: 1rem 3rem;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(13,110,253,0.3);
+    }
+    
+    .btn-hero:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(13,110,253,0.4);
+    }
+
+
+    /* Section headings */
+    /* Section Styling */
+    .section-modern {
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .section-modern:nth-child(even) {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      color: #2c3e50;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-bg);
+      border-radius: 2px;
+    }
+
+
+
+    /* Feature Cards */
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-bg);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+      color: #764ba2;
+    }
+
+
+
+
+    
+
+    /* Cards */
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--hover-shadow);
+    }
+    .card i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover i {
+      color: var(--success-color);
+      transform: scale(1.1);
+    }
+
+    /* Benefits and journey steps */
+    .benefits-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .benefit-item {
+      padding: 1rem;
+      border-left: 4px solid var(--success-color);
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+      background: transparent;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+    .benefit-item i {
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .benefit-item:hover {
+      background: #f8f9fa;
+      border-left-color: #1e7e34;
+      cursor: default;
+      transform: translateX(10px);
+    }
+    .journey-step {
+      max-width: 700px;
+      margin: 1rem auto;
+      padding: 1.5rem;
+      border-left: 5px solid var(--primary-color);
+      background: white;
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      font-size: 1.2rem;
+    }
+    .journey-step::before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary-color);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .journey-step:hover {
+      box-shadow: var(--hover-shadow);
+      transform: translateX(10px);
+    }
+    .journey-container {
+      counter-reset: step-counter;
+    }
+
+    .cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 5rem 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s linear infinite;
+  z-index: 0;
+}
+
+.cta-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .btn {
+  margin: 0.5rem;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<!-- <section class="hero" data-aos="fade-up">
+  <video autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='img/Long range Beram.mp4') }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div>
+    <h1 class="animate__animated animate__fadeInDown">
+      Connecting Cities, Saving Lives<br>Long-Range Drone Delivery System
+    </h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">
+      From godown-to-godown logistics to healthcare emergencies – BeRAM’s long-range drones redefine intercity deliveries.
+    </p>
+    <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-primary btn-hero animate__animated animate__pulse animate__delay-2s floating">Pre-Order Now 🚀</a>
+  </div>
+</section> -->
+
+
+<section class="video-banner">
+  <video autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='img/Long range Beram.mp4') }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay-content" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="animate__animated animate__fadeInDown">Connecting Cities, Saving Lives<br>Long-Range Drone Delivery System</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">From godown-to-godown logistics to healthcare emergencies – BeRAM’s long-range drones redefine intercity deliveries.</p>
+    <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-primary btn-hero animate__animated animate__pulse animate__delay-2s floating">Pre-Order Now 🚀</a>
+  </div>
+</section>
+
+
+
+<!-- Problem & Solution -->
+<!-- <section class="section-modern" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title">The Challenge We're Solving</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="section-title text-danger">Problem Statement</h2>
+        <ul class="list-unstyled larger-text">
+          <li><i class="fas fa-times-circle me-2"></i>Inter-city deliveries take 2-5 days due to road congestion and multiple transfers.</li>
+          <li><i class="fas fa-times-circle me-2"></i>Healthcare logistics often fail due to delays, contributing to 12,000 deaths daily.</li>
+          <li><i class="fas fa-times-circle me-2"></i>High costs and CO₂ emissions from diesel trucks decrease efficiency.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h2 class="section-title text-success">Our Solution</h2>
+        <ul class="list-unstyled larger-text">
+          <li><i class="fas fa-check-circle me-2"></i>Direct godown-to-godown and urgent healthcare deliveries with AI-powered long-range drones.</li>
+          <li><i class="fas fa-check-circle me-2"></i>Patented Power Harvesting System (PHS) enables in-flight charging for extended endurance.</li>
+          <li><i class="fas fa-check-circle me-2"></i>Significantly faster, cost-effective, and 98% less carbon emissions compared to trucks.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Problem Statement -->
+  <section class="section-modern" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">The Challenge We're Solving</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="text-danger mb-3">Current Problems:</h4>
+                <ul class="list-unstyled">
+                  <!-- <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Local Godown earn less compare to E-commerce gaints on per delivery basis</li> -->
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Inter-city deliveries take 2-5 days due to road congestion and multiple transfers.</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Healthcare logistics often fail due to delays, contributing to 12,000 deaths daily.</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>High costs and CO₂ emissions from diesel trucks decrease efficiency.</li>
+                
+                  <!-- <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>No Scheduled Delivery</li> -->
+                  
+
+                </ul>
+              </div>
+             <div class="col-md-6">
+  <h4 class="text-success mb-3">Our Solutions:</h4>
+  <ul class="list-unstyled">
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+     Direct godown-to-godown and urgent healthcare deliveries with AI-powered long-range drones.
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Patented Power Harvesting System (PHS) enables in-flight charging for extended endurance.
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Significantly faster, cost-effective, and 98% less carbon emissions compared to trucks.
+    </li>
+    
+  </ul>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Features -->
+<section class="section-modern bg-light" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Features & Specifications</h2>
+    <div class="row justify-content-center g-4">
+      {% set features = [
+        ('box', 'Payload', 'Up to 10 kg scalable'),
+        ('route', 'Range', 'Up to 100+ km'),
+        ('tachometer-alt', 'Speed', '60-80 km/h average'),
+        ('bolt', 'In-flight Charging', 'PHS technology using high voltage lines'),
+        ('robot', 'AI Navigation', 'Weather adaptive flight & mapping'),
+        ('network-wired', 'UTMS Integration', 'Airspace scheduling & safety'),
+        ('lock', 'Secure Delivery', 'Encrypted OTP authentication')
+      ] %}
+      {% for icon, title, desc in features %}
+      <div class="col-md-6 col-lg-3">
+        <div class="card">
+          <i class="fas fa-{{ icon }} icon-lg"></i>
+          <h5>{{ title }}</h5>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="fst-italic mt-4">Your fastest partner for critical intercity logistics and healthcare supply chains.</p>
+  </div>
+</section>
+
+<!-- Business Model -->
+<section class="section-modern" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Business & Financial Model</h2>
+    <div class="row justify-content-center g-4">
+      {% set models = [
+        ('B2B SaaS + Hardware', 'Lease or purchase drones for logistics and e-commerce providers.'),
+        ('UTMS Subscription', 'Cloud-hosted traffic management software as a service.'),
+        ('Annual AMC & Insurance', 'Maintenance, compliance and insurance packages.'),
+        ('Custom Contracts', 'Tailored solutions for pharma, defense, and healthcare.')
+      ] %}
+      {% for title, desc in models %}
+      <div class="col-md-6 col-lg-3">
+        <div class="card">
+          <h5>{{ title }}</h5>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="section-modern bg-light" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Use Case Industries</h2>
+    <div class="row justify-content-center g-4">
+      {% set industries = [
+        ('hospital-symbol', 'Healthcare', 'Emergency blood, vaccines, organs'),
+        ('truck-moving', 'Logistics', 'Intercity godown-to-godown'),
+        ('seedling', 'Agriculture', 'Farm to processing center shipments'),
+        ('exclamation-triangle', 'Disaster Relief', 'Rapid emergency supplies'),
+        ('shield-alt', 'Defense', 'Lightweight tactical gear transport'),
+      ] %}
+      {% for icon, title, desc in industries %}
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <i class="fas fa-{{ icon }} icon-lg"></i>
+          <h6>{{ title }}</h6>
+          <p class="small">{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="section-modern" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-center">Benefits of BeRAM Drones</h2>
+    <div class="benefits-list mx-auto" style="max-width: 600px;">
+      {% set benefits = [
+        'ROI from Year 1',
+        'On-time delivery, beating traffic',
+        'Scheduled and automated dispatch',
+        'No legal burden',
+        'Zero maintenance costs',
+        'Enhanced local profits',
+        '98% lower carbon footprint',
+        'Future-ready technology',
+      ] %}
+      {% for item in benefits %}
+      <div class="benefit-item">
+        <i class="fas fa-check-circle text-success"></i>
+        {{ item }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Environmental & Social Impact -->
+<section class="section-modern bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-center">Environmental & Social Impact</h2>
+    <div class="benefits-list mx-auto" style="max-width: 600px;">
+      {% set impacts = [
+        'Replaces hundreds of diesel truck trips annually',
+        'Reduces thousands of tons of CO₂',
+        'Saves 10,000+ lives per day',
+        'Boosts GDP by cutting logistical overhead',
+      ] %}
+      {% for item in impacts %}
+      <div class="benefit-item">
+        <i class="fas fa-check-circle text-success"></i>
+        {{ item }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Customer Journey -->
+<section class="section-modern" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-center">Customer Journey Flow</h2>
+    <div class="journey-container mx-auto" style="max-width: 600px;">
+      {% set steps = [
+        'Goods loaded into the drone',
+        'Mission planned via dashboard',
+        'Drone takes off on AI-optimized route',
+        'In-flight charging enabled by PHS',
+        'Delivery completed with secure authentication',
+        'Drone returns or begins next mission',
+      ] %}
+      {% for step in steps %}
+      <div class="journey-step">
+        {{ step }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Ready to Transform Your Delivery?</h2>
+    <p class="lead mb-5">Join the drone delivery revolution and boost your business today!</p>
+    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+      <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-light btn-lg px-5 py-3">
+        <i class="fas fa-rocket me-2"></i>Pre-Order Now
+      </a>
+      <a href="{{ url_for('main.contact') }}?inquiry_type=request_demo" class="btn btn-outline-light btn-lg px-5 py-3">
+        <i class="fas fa-play me-2"></i>Request Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+{% endblock %}

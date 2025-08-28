@@ -1,0 +1,614 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+  <meta name="description" content="BeRAM's Short-Range Drone Delivery System enables godown-to-local deliveries with 20 km range, 2 kg payload, AI navigation, and 98% lower carbon emissions. Pre-order now." />
+  <meta name="keywords" content="Short-range drone delivery, Godown-to-local delivery drone, AI-powered delivery drone India, E-commerce drone logistics" />
+  <title>Short-Range Drone Delivery – BeRAM Drones</title>
+  
+  <!-- Animation Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --success-color: #198754;
+      --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --hover-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Hero Section */
+    .video-banner {
+      margin-top: 0.05rem;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .video-banner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+      z-index: -1;
+    }
+    
+    .video-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* background: linear-gradient(45deg, rgba(13,110,253,0.7), rgba(108,117,125,0.5)); */
+      z-index: 0;
+    }
+    
+    .overlay-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      max-width: 1500px;
+      padding: 2rem;
+      margin-top: 15rem;
+    }
+    
+    .overlay-content h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      line-height: 1.2;
+    }
+    
+    .overlay-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    
+    .btn-hero {
+      padding: 1rem 3rem;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(13,110,253,0.3);
+    }
+    
+    .btn-hero:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(13,110,253,0.4);
+    }
+
+
+
+     .larger-text {
+    font-size: 1.2rem;
+    /* you can use rem, px, %, etc. */
+  }
+
+
+    /* Section Styling */
+    .section-modern {
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .section-modern:nth-child(even) {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      color: #2c3e50;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-bg);
+      border-radius: 2px;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-bg);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+      color: #764ba2;
+    }
+
+
+
+
+    
+
+
+    /* Industry Cards */
+    .industry-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 2px solid transparent;
+    }
+    
+    .industry-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--success-color);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .industry-icon {
+      font-size: 3.5rem;
+      color: var(--success-color);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .industry-card:hover .industry-icon {
+      transform: scale(1.2);
+      color: #20c997;
+    }
+
+    /* Benefits List */
+    .benefits-list {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .benefit-item {
+      padding: 1rem;
+      border: none;
+      border-left: 4px solid var(--success-color);
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+    
+    .benefit-item:hover {
+      background: #f8f9fa;
+      transform: translateX(10px);
+      border-left-color: #20c997;
+    }
+
+    /* Journey Steps */
+    .journey-step {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--card-shadow);
+      border-left: 5px solid var(--primary-color);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .journey-step::before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary-color);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    .journey-container {
+      counter-reset: step-counter;
+    }
+    
+    .journey-step:hover {
+      transform: translateX(10px);
+      box-shadow: var(--hover-shadow);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient-bg);
+      padding: 5rem 0;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: float 20s linear infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .overlay-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .overlay-content p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Scroll Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .fade-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating Animation */
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="video-banner">
+  <video autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='img/Beram Drone Delivery.mp4') }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay-content" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="animate__animated animate__fadeInDown">Revolutionizing Local Deliveries<br>with AI-Powered Drones</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">From godown to doorstep – faster, cleaner, and smarter delivery for Tier 2–3 cities.</p>
+    <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-primary btn-hero animate__animated animate__pulse animate__delay-2s floating">Pre-Order Now 🚀</a>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <!-- Problem Statement -->
+  <section class="section-modern" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">The Challenge We're Solving</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="text-danger mb-3">Current Problems:</h4>
+                <ul class="list-unstyled">
+                  <!-- <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Local Godown earn less compare to E-commerce gaints on per delivery basis</li> -->
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Delivery Vehicle pumps 4.6 metric tons CO₂ annually</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>No Scheduled Delivery</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>Emergency Medicine and healthcare supplies</li>
+                  <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>High cost per short-distance delivery</li>
+                  <!-- <li class="mb-2 larger-text"><i class="fas fa-times-circle text-danger me-2"></i>No Scheduled Delivery</li> -->
+                  
+
+                </ul>
+              </div>
+             <div class="col-md-6">
+  <h4 class="text-success mb-3">Our Solutions:</h4>
+  <ul class="list-unstyled">
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+     Drones Cut-out 98% carbon Emission
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Customers can choose exact time slots with on-demand scheduled delivery
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Medicines and healthcare supplies can reach in minutes through Drone-delivery
+    </li>
+    <li class="mb-2 larger-text">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      Drone Delivery makes Local Delivery faster and cheaper
+    </li>
+  </ul>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section-modern">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Features & Specifications</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <i class="fas fa-box feature-icon"></i>
+            <h5>Payload Capacity</h5>
+            <p class="text-muted">2 kg</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <i class="fas fa-route feature-icon"></i>
+            <h5>Delivery Range</h5>
+            <p class="text-muted">20 km radius</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <i class="fas fa-tachometer-alt feature-icon"></i>
+            <h5>Average Speed</h5>
+            <p class="text-muted">40 km/hr</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-card">
+            <i class="fas fa-map-marker-alt feature-icon"></i>
+            <h5>Real-Time GPS Tracking</h5>
+            <p class="text-muted">Live location updates</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="feature-card">
+            <i class="fas fa-robot feature-icon"></i>
+            <h5>AI-Based Navigation</h5>
+            <p class="text-muted">Autonomous flight paths</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="feature-card">
+            <i class="fas fa-lock feature-icon"></i>
+            <h5>Secure Deliveries</h5>
+            <p class="text-muted">OTP verification system</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="700">
+        <p class="lead text-primary fst-italic">"Your delivery partner that works 24/7, saves cost, and grows your business instantly."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Model -->
+  <section class="section-modern">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Business & Financial Model</h2>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="feature-card" data-aos="zoom-in">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <div class="display-4 text-success mb-3">₹15</div>
+                <h5>Per Delivery Revenue</h5>
+                <p class="text-muted">Godown: ₹5 | BeRAM: ₹10</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="display-4 text-primary mb-3">25%</div>
+                <h5>Godown Investment</h5>
+                <p class="text-muted">Minimal ecosystem cost</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="display-4 text-warning mb-3">Year 1</div>
+                <h5>ROI Timeline</h5>
+                <p class="text-muted">Returns from first year</p>
+              </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+              <h5 class="text-success">✓ No Legal Burden ✓ No Insurance Costs ✓ No Maintenance</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section-modern">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Use Case Industries</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="100">
+          <div class="industry-card">
+            <i class="fas fa-shopping-cart industry-icon"></i>
+            <h5>E-Commerce</h5>
+            <p>Same-day local fulfillment</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="200">
+          <div class="industry-card">
+            <i class="fas fa-pills industry-icon"></i>
+            <h5>Healthcare</h5>
+            <p>Fast medical deliveries</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="300">
+          <div class="industry-card">
+            <i class="fas fa-tractor industry-icon"></i>
+            <h5>Agriculture</h5>
+            <p>Smart farming solutions</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="400">
+          <div class="industry-card">
+            <i class="fas fa-store industry-icon"></i>
+            <h5>Retail</h5>
+            <p>Hyperlocal commerce</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section-modern">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Benefits of BeRAM Drones</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="benefits-list" data-aos="fade-up" data-aos-delay="200">
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>ROI from Year 1</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>On-Time Delivery – no traffic delays</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>Scheduled & Automated Deliveries</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>Zero Legal Obligations</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>No Maintenance Costs</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>Enhanced Local Profits</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>98% Lower Carbon Footprint</div>
+            <div class="benefit-item"><i class="fas fa-check-circle text-success me-3"></i>Future-Ready Technology</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section-modern" >
+  <div class="container">
+    <h2 class="section-title text-center">Environmental & Social Impact</h2>
+    <ul class="benefits-list mx-auto" style="max-width: 600px; list-style: none; padding-left: 0;">
+      <li class="benefit-item"><i class="fas fa-truck me-2"></i>Eliminates dependency on fuel-based vehicles</li>
+      <li class="benefit-item"><i class="fas fa-globe me-2"></i>Reduces 98% CO₂ emissions</li>
+      <li class="benefit-item"><i class="fas fa-user-friends me-2"></i>Generates local employment (drone pilots, operators, support staff)</li>
+      <li class="benefit-item"><i class="fas fa-hospital me-2"></i>Saves lives with faster medical deliveries</li>
+    </ul>
+  </div>
+</section>
+
+  <!-- Customer Journey -->
+  <section class="section-modern">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Customer Journey Flow</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="journey-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="journey-step">Goods Loaded in Drone</div>
+            <div class="journey-step">Mission Planned via Dashboard</div>
+            <div class="journey-step">Drone Takes Off (AI-optimized route)</div>
+            <div class="journey-step">Real-Time Tracking (godown + customer)</div>
+            <div class="journey-step">Delivery Completed (OTP/QR authentication)</div>
+            <div class="journey-step">Drone Returns Automatically</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto" data-aos="zoom-in">
+        <h2 class="display-4 mb-4">Ready to Transform Your Delivery?</h2>
+        <p class="lead mb-5">Join the drone delivery revolution and boost your business today!</p>
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+          <a href="{{ url_for('main.contact') }}?inquiry_type=pre_order" class="btn btn-light btn-lg px-5 py-3">
+            
+            <i class="fas fa-rocket me-2"></i>Pre-Order Now
+          </a>
+          <a href="{{ url_for('main.contact') }}?inquiry_type=request_demo" class="btn btn-outline-light btn-lg px-5 py-3">
+            <i class="fas fa-play me-2"></i>Request Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+</script>
+{% endblock %}
