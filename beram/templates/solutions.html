@@ -14,7 +14,7 @@
                 <div class="card h-100 shadow-sm {% if solution.has_dedicated_page %}border-primary border-2{% endif %}">
                     {# --- ADD IMAGE HERE --- #}
                     {% if solution.image %}
-                    <img src="{{ url_for('static', filename=solution.image) }}" class="card-img-top" alt="{{ solution.name }}" style="height: 200px; object-fit: cover;">
+                    <img src="{{ url_for('static', filename=solution.image) }}" class="card-img-top" alt="{{ solution.name }}" style="height: 400px; object-fit: cover;">
                     {% else %}
                     {# Optional: Placeholder if no image exists #}
                      <img src="{{ url_for('static', filename='img/solution_dcis.jpg') }}" class="card-img-top" alt="Placeholder" style="height: 200px; object-fit: cover;">
